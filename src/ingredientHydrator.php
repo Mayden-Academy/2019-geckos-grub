@@ -15,7 +15,7 @@ class IngredientHydrator {
      *
      * @result populates results property with ingredients' names
      */
-    public function __construct(GRUB\Db $db)
+    public function __construct(\PDO $db)
     {
         $query = $db->prepare("SELECT `name` FROM `ingredients`;");
         $query->setFetchMode(PDO::FETCH_CLASS, 'IngredientEntity');
