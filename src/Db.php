@@ -1,5 +1,7 @@
 <?php
 
+namespace GRUB;
+
 /**
  * Class Db
  *
