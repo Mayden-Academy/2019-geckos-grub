@@ -3,7 +3,18 @@
 namespace GRUB;
 
 class IngredientHydrator {
+    /**
+     * @var array of instantiated ingredient entity objects
+     */
     public $results;
+
+    /**
+     * IngredientHydrator constructor.
+     *
+     * @param Db $db
+     *
+     * @result populates results property with ingredients' names
+     */
     public function __construct(Db $db)
     {
         $query = $db->prepare("SELECT `name` FROM `ingredients`;");
@@ -12,6 +23,13 @@ class IngredientHydrator {
         $this->results = $query->fetchAll();
     }
 
+    /**
+     * Instantiates ingredient entity objects
+     *
+     * @param array $results
+     *
+     * @return array of ingredient entity objects
+     */
     public function getIngredients(array $results) :array {
         $ingredients = [];
         foreach ($results as $result) {
