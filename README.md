@@ -1,2 +1,3 @@
-# year-cohort-projectName
-project template repo
+# 2019-geckos-grub
+
+An OOP PHP ingredient/recipie application
