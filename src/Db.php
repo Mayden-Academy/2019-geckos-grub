@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class Db
+ *
+ * @return db connection
+ */
 class Db {
     /**
      * Creates a database connection
@@ -13,6 +18,9 @@ class Db {
         return $db;
     }
 
+    /**
+     * Db constructor.
+     */
     public function __construct()
     {
         return $this->getDB();
