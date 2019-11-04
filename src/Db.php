@@ -11,7 +11,7 @@ class Db {
      *
      * @return PDO
      */
-    public function getDB()
+    public function getDB() : PDO
     {
         $db = new PDO('mysql:host=db; dbname=ingredients', 'root', 'password');
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -26,3 +26,4 @@ class Db {
         return $this->getDB();
     }
 }
+
