@@ -1,7 +1,11 @@
 <?php
 
 class Db {
-
+    /**
+     * Creates a database connection
+     *
+     * @return PDO
+     */
     public function getDB()
     {
         $db = new PDO('mysql:host=db; dbname=ingredients', 'root', 'password');
