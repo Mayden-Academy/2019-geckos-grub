@@ -17,7 +17,6 @@ class RecipeTest extends TestCase
         $this->assertEquals($validation, $expected);
     }
 
-
     /**
      * Tests for graceful failure of the validateForm function
      */
@@ -28,7 +27,6 @@ class RecipeTest extends TestCase
         $this->assertEquals($validation, $expected);
     }
 
-
     /**
      * Tests the type-hinting of the validateForm function
      */
@@ -37,7 +35,5 @@ class RecipeTest extends TestCase
         $formData = "beans";
         $this->expectException(TypeError::class);
         $case = ValidateForm($formData);
-
     }
-
 }

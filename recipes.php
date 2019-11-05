@@ -1,9 +1,7 @@
 <?php
 
-
 /**
  * Function to validate post data from form submitted from index.php
- *
  *
  * @return array of validated ingredients
  */
