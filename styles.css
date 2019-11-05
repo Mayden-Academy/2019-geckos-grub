@@ -4,7 +4,7 @@
 
 body {
     font-size: 40px;
-    font-family: Helvetica;
+    font-family: Helvetica, serif;
     background-image: linear-gradient(#9cf59c, #fff);
 }
 
@@ -37,9 +37,9 @@ input {
     overflow: auto;
     margin: 20px 0;
     min-height: 150px;
-    background-color: rgba(230, 230, 230, 0.5);
+    background-color: #E6E6E6;
     border-radius: 10px;
-    border: 2px solid rgba(70, 70, 70, 0.5);
+    border: 2px solid #464646;
     box-shadow: 5px 5px;
 }
 
@@ -53,10 +53,11 @@ input {
 
 .recipe button {
     margin-top: 6px;
-    background-color: rgb(254,222,183);
+    background-color: #FEDEB7;
     font-size: 20px;
     font-style: italic;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .recipe img {

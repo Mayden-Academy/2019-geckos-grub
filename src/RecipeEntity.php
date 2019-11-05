@@ -17,22 +17,19 @@ class RecipeEntity {
      *
      * @param string $imageURL URL of an image of the dish
      *
-     * @param array $ingredients Array of the ingredients required for the recipe
+     * @param string $ingredients Array of the ingredients required for the recipe
      */
     public function __construct(string $title, string $link, string $imageURL, string $ingredients){
               $this->title = html_entity_decode($title);
               $this->link = $link;
-              $this->imageURL = $imageURL;
-              $this->ingredients = html_entity_decode($ingredients);
 
             if(strlen($imageURL) == 0) {
                 $this->imageURL = "img/can.jpg";
+            } else {
+                $this->imgURL = $imageURL;
             }
 
             $this->ingredients = $this->limit_ingredients($ingredients);
-
-
-            
     }
 
     /**
