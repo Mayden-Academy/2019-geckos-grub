@@ -22,11 +22,10 @@ class Curl {
     public function makeRequest(): array
     {
         $ingredientsString = implode(',', $this->ingredients);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, self::BASEURL . '?i=' . $ingredientsString);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $output = curl_exec($ch);
-        curl_close($ch);
+        curl_setopt($this->ch, CURLOPT_URL, self::BASEURL . '?i=' . $ingredientsString);
+        curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($this->ch);
+        curl_close($this->ch);
         $output = json_decode($output, true);
         return $output;
     }
@@ -36,6 +35,7 @@ class Curl {
      */
     public function __construct($ingredients)
     {
+    $this->ch = curl_init();
     $this->ingredients = $ingredients;
     }
 
