@@ -37,12 +37,16 @@ class RecipeEntity {
      */
     public function generateHTML(): string {
         $html = "<div class='recipe'>";
-        $html .= "<h3>$this->title</h3>";
+        $html .= "<div class='left'>";
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
+        $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
+        $html .= "</div>";
+        $html .= "<div class='right'>";
+        $html .= "<h5>$this->title</h5>";
         $html .= "<p>Ingredients: $this->ingredients </p>";
-        $html .= "<a href='$this->link'>Link to recipe</a>";
+        $html .= "</div>";
         $html .= "</div>";
         return $html;
     }
