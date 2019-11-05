@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 40px;
+}
+
+.container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ingredient {
+    overflow: auto;
+    margin: 10px;
+}
+
+.ingredient p {
+    margin: 0;
+}
+
+input {
+    float: left;
+    width: 60px;
+    height: 60px;
+}
