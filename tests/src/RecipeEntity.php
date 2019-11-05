@@ -53,7 +53,5 @@ class StackTest extends TestCase {
     public function testMalformedRecipeEntityGenerateHTML(){
         $this->expectException(TypeError::class);
         $case = new GRUB\RecipeEntity ([],[],[],9);
-    
     }
-    
 }

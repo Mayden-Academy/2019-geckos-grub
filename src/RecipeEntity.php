@@ -35,8 +35,7 @@ class RecipeEntity {
             $ingredients .= $ingredient .= " ";
         }
         
-        $html = "";
-        $html .= "<div class='recipe'>";
+        $html = "<div class='recipe'>";
         $html .= "<a href='$this->link'>";
         $html .= "<h3>$this->title</h3>";
         $html .= "<div class='recipeImage'>";
@@ -47,6 +46,5 @@ class RecipeEntity {
         $html .= "</div>";
 
         return $html;
-
     }
 }
