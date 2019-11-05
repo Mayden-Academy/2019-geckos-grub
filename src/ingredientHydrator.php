@@ -2,7 +2,11 @@
 
 namespace GRUB;
 
-
+/**
+ * Class IngredientHydrator uses Db connection to fetch ingredients array from db
+ *
+ * @package GRUB
+ */
 class IngredientHydrator {
     /**
      * @var array of instantiated ingredient entity objects
