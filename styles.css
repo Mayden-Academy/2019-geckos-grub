@@ -34,12 +34,12 @@ input {
 }
 
 .recipe {
-    overflow: auto;
     margin: 20px 0;
-    min-height: 140px;
-    background-color: rgba(230, 230, 230, 0.3);
+    min-height: 150px;
+    background-color: rgba(230, 230, 230, 0.5);
     border-radius: 10px;
     border: 2px solid rgba(70, 70, 70, 0.5);
+    box-shadow: 5px 5px;
 }
 
 .recipe h5 {
@@ -47,11 +47,11 @@ input {
 }
 
 .recipe p {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .recipe button {
-    margin-top: 10px;
+    margin-top: 6px;
     background-color: rgb(254,222,183);
     font-size: 20px;
     font-style: italic;
@@ -62,6 +62,10 @@ input {
     max-width: 100px;
     max-height: 100px;
     margin-top: 10px;
+}
+
+.recipe div {
+    min-height: 170px;
 }
 
 .recipe .left {
