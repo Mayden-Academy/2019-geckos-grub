@@ -2,11 +2,16 @@
 
 namespace GRUB;
 
+/**
+ * Class IngredientHydrator uses Db connection to fetch ingredients array from db
+ *
+ * @package GRUB
+ */
 class IngredientHydrator {
     /**
      * @var array of instantiated ingredient entity objects
      */
-    public $results;
+    public $ingredients;
 
     /**
      * IngredientHydrator constructor.
@@ -18,9 +23,9 @@ class IngredientHydrator {
     public function __construct(\PDO $db)
     {
         $query = $db->prepare("SELECT `name` FROM `ingredients`;");
-        $query->setFetchMode(\PDO::FETCH_CLASS, 'IngredientEntity');
+        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
         $query->execute();
-        $this->results = $query->fetchAll();
+        $this->ingredients = $query->fetchAll();
     }
 
     /**
@@ -30,12 +35,7 @@ class IngredientHydrator {
      *
      * @return array of ingredient entity objects
      */
-    public function getIngredients(array $results) :array {
-        $ingredients = [];
-        foreach ($results as $result) {
-            $ingredient = new IngredientEntity($result['name']);
-            array_push($ingredients, $ingredient);
-        }
-        return $ingredients;
+    public function getIngredients() {
+        return $this->ingredients;
     }
 }
