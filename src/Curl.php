@@ -37,7 +37,3 @@ class Curl {
     }
 
 }
-
-//code to test with:
-//$curl = new Curl(['sausage', 'onion', 'garlic']);
-//var_dump($curl->makeRequest());
