@@ -30,9 +30,6 @@ class RecipeEntity {
             }
 
             $this->ingredients = $this->limit_ingredients($ingredients);
-
-
-            
     }
 
     /**
