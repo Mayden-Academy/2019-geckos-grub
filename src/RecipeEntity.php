@@ -12,8 +12,11 @@ class RecipeEntity {
      * Instanciates RecipeEntity
      *
      * @param string $title Title of the recipe
+     *
      * @param string $link Link to the recipe 
+     *
      * @param string $imageURL URL of an image of the dish
+     *
      * @param array $ingredients Array of the ingredients required for the recipe
      */
     public function __construct(string $title, string $link, string $imageURL, string $ingredients){

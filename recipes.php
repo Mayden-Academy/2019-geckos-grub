@@ -34,7 +34,7 @@ if($_POST != []) {
             echo $recipe->generateHTML();
         }
     } else {
-        echo "<h1>No recipes found, please select different ingredients</H1>";
+        echo "<h1>No recipes found, please select different ingredients</h1>";
     }
 } else {
     header("Location: index.php?message=Please%20select%20some%20ingredients");
