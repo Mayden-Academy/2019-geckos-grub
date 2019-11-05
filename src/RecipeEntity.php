@@ -25,6 +25,8 @@ class RecipeEntity {
 
             if(strlen($imageURL) == 0) {
                 $this->imageURL = "img/can.jpg";
+            } else {
+                $this->imgURL = $imageURL;
             }
 
             $this->ingredients = $this->limit_ingredients($ingredients);
