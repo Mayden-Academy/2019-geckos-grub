@@ -34,6 +34,7 @@ input {
 }
 
 .recipe {
+    overflow: auto;
     margin: 20px 0;
     min-height: 150px;
     background-color: rgba(230, 230, 230, 0.5);
@@ -66,6 +67,7 @@ input {
 
 .recipe div {
     min-height: 170px;
+    padding: 5px;
 }
 
 .recipe .left {

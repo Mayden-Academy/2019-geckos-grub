@@ -28,6 +28,11 @@ class RecipeEntity {
             if(strlen($imageURL) == 0) {
                 $this->imageURL = "img/can.jpg";
             }
+
+            $this->ingredients = $this->limit_ingredients($ingredients);
+
+
+            
     }
 
     /**
@@ -50,4 +55,17 @@ class RecipeEntity {
         $html .= "</div>";
         return $html;
     }
+
+    /**
+     * Limits the number of ingredients to 21
+     *
+     * @param [string] $phrase The string of ingredients to be trimmed
+     * @return string Number of ingredients limited to 21
+     */
+    private function limit_ingredients(string $phrase) :string {
+        $phrase_array = explode(', ',$phrase);
+        if(count($phrase_array) > 21 && 21 > 0)
+           $phrase = implode(', ',array_slice($phrase_array, 0, 21)).'...';
+        return $phrase;
+     }
 }
