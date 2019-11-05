@@ -13,7 +13,7 @@ class Curl {
      * @var array of user selected ingredients
      */
     private $ingredients;
-
+private $ch;
     /**
      * function converting ingredients to recipes
      *
