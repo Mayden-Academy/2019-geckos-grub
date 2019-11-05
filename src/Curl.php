@@ -2,6 +2,9 @@
 
 namespace GRUB;
 
+/**
+* Used for creating an API connection
+**/
 class Curl {
 
     const BASEURL = "http://www.recipepuppy.com/api/";

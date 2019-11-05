@@ -31,11 +31,13 @@ class IngredientHydrator {
     /**
      * Instantiates ingredient entity objects
      *
-     * @param array $results
      *
      * @return array of ingredient entity objects
      */
     public function getIngredients() {
-        return $this->ingredients;
+$query = $db->prepare("SELECT `name` FROM `ingredients`;");
+        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
+        $query->execute();
+        return $query->fetchAll();
     }
 }
