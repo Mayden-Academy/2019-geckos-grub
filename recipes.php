@@ -8,6 +8,8 @@ use GRUB\RecipeHydrator;
 /**
  * Function to validate post data from form submitted from index.php
  *
+ * @param array $formData data from a form
+ * 
  * @return array of validated ingredients
  */
 function validateForm(array $formData) :array {
