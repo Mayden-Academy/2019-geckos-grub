@@ -13,7 +13,7 @@ class Curl {
      *
      * @return multi-dimensional associative array
      */
-    public function makeRequest()
+    public function makeRequest(): array
     {
         $ingredientsString = implode(',', $this->ingredients);
         $ch = curl_init();
