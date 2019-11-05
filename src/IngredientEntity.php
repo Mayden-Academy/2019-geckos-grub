@@ -22,8 +22,8 @@ class IngredientEntity {
      */
     public function generateHTML(): string{
         $html = "<div class='ingredient'>";
-        $html .= "<input type='checkbox' name='".$this->getName()."'/>";
-        $html .= "<label>".$this->getName()."</label>";
+        $html .= "<label><input type='checkbox' name='".$this->getName()."'/>";
+        $html .= "".$this->getName()."</label>";
         $html .= "</div>";
         return $html;
     }
