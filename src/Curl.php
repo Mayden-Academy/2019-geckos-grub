@@ -6,12 +6,15 @@ class Curl {
 
     const BASEURL = "http://www.recipepuppy.com/api/";
 
+    /**
+     * @var array of user selected ingredients
+     */
     private $ingredients;
 
     /**
-     * function converting ingredients array to string data from recipepuppy
+     * function converting ingredients to recipes
      *
-     * @return multi-dimensional associative array
+     * @return array recipes from recipe puppy
      */
     public function makeRequest(): array
     {
