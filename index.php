@@ -13,7 +13,7 @@ foreach($ingredients as $ingredient) {
 
 ?>
 
-<html>
+<html lang="en-GB">
     <head>
         <title>GRUB</title>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
