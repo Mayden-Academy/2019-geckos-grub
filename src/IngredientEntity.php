@@ -1,20 +1,18 @@
 <?php
 
-namespace GRUB; 
+namespace GRUB;
 
-/* Class for IngredientEntities */
+/**
+ * Class IngredientEntities uses ingredients object from IngredientsHydrator to output a list of ingredients with checkboxes to the front end
+ *
+ * @package GRUB
+ */
 class IngredientEntity {
-    private $name;
-    
-    /**
-     * Constructor for IngredientEntity
-     *
-     * @param string $name Name for ingredient object
-     */
-    public function __construct(string $name){
 
-        $this->name = $name;
-    }
+    /**
+     * @var containing ingredient names
+     */
+    private $name;
 
     /**
      * Returns name of ingredient object as string
@@ -32,8 +30,8 @@ class IngredientEntity {
      */
     public function generateHTML(): string{
         $html = "<div class='ingredient'>";
-        $html .= "<input type='checkbox' name='".$this->getName()."'/>";
-        $html .= "<p>".$this->getName()."</p>";
+        $html .= "<label><input type='checkbox' name='".$this->getName()."'/>";
+        $html .= "".$this->getName()."</label>";
         $html .= "</div>";
         return $html;
     }
