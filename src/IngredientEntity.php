@@ -1,9 +1,17 @@
 <?php
 
-namespace GRUB; 
+namespace GRUB;
 
-/* Class for IngredientEntities */
+/**
+ * Class IngredientEntities uses ingredients object from IngredientsHydrator to output a list of ingredients with checkboxes to the front end
+ *
+ * @package GRUB
+ */
 class IngredientEntity {
+
+    /**
+     * @var containing ingredient names
+     */
     private $name;
 
     /**

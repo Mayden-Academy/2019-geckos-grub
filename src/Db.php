@@ -16,7 +16,7 @@ class Db
      *
      * @return PDO
      */
-    public function getDB(): PDO
+    public static function getDB(): PDO
     {
         $db = new PDO('mysql:host=db; dbname=ingredients', 'root', 'password');
         return $db;
