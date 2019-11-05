@@ -39,6 +39,7 @@ input {
     min-height: 140px;
     background-color: rgba(230, 230, 230, 0.3);
     border-radius: 10px;
+    border: 2px solid rgba(70, 70, 70, 0.5);
 }
 
 .recipe h5 {
@@ -60,13 +61,14 @@ input {
 .recipe img {
     max-width: 100px;
     max-height: 100px;
+    margin-top: 10px;
 }
 
 .recipe .left {
     float: left;
     width: 40%;
 }
-
+ 
 .recipe .right {
     float: right;
     width: 60%;
