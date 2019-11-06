@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.27)
 # Database: ingredients
-# Generation Time: 2019-11-06 15:32:48 +0000
+# Generation Time: 2019-11-06 15:34:34 +0000
 # ************************************************************
 
 
@@ -76,7 +76,7 @@ CREATE TABLE `recipes` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
   `link` varchar(1024) NOT NULL DEFAULT '',
-  `imageURL` varchar(1024) DEFAULT '',
+  `imageURL` varchar(1024) NOT NULL DEFAULT '',
   `ingredients` varchar(1024) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
