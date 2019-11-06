@@ -13,7 +13,7 @@ abstract class UserIngredientValidator {
 	* @returns array of validated user-inputted ingredients
 	*/
 	public static function validateUserIngredients(array $explodedUserIngredients) :array {
-        private $validatedIngredients = [];
+	    $validatedIngredients = [];
 		if ($explodedUserIngredients != []){
 			foreach ($explodedUserIngredients as $ingredient){
 				//removes anything that isn't a letter and removes all whitespace
