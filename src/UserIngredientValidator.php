@@ -1,19 +1,22 @@
 <?php
 
 namespace GRUB;
-/*
-* Abstract class with a static function used for validation of user-inputted ingredients
-*/
+
+/**
+ * Class UserIngredientValidator class with a static function used for validation of user-inputted ingredients
+ * 
+ * @packages GRUB
+ */
 abstract class UserIngredientValidator {
     /**
 	* Function to validate ingredients input by user and return a 'clean' array of ingredients with whitespace removed
 	*
 	* @param array $explodedUserIngredients an array of the user ingredients submitted from index.php
 	*
-	* @returns array of validated user-inputted ingredients
+	* @return array of validated user-inputted ingredients
 	*/
 	public static function validateUserIngredients(array $explodedUserIngredients) :array {
-	    $validatedIngredients = [];
+	  $validatedIngredients = [];
 		if ($explodedUserIngredients != []){
 			foreach ($explodedUserIngredients as $ingredient){
 				//removes anything that isn't a letter and removes all whitespace
@@ -23,7 +26,7 @@ abstract class UserIngredientValidator {
 			}
 			return $validatedIngredients;
 		} else {
-			return "Invalid data. Please try again.";
+			return "<p>Invalid data. Please try again.</p>";
 		}
 	}
 }
