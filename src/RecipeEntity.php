@@ -81,6 +81,28 @@ class RecipeEntity {
     }
 
     /**
+     * Generating HTML from recipe properties.
+     *
+     * @return string HTML code.
+     */
+    public function generateHTMLForSavedRecipes(): string {
+        $html = "<div class='recipe'>";
+        $html .= "<div class='left'>";
+        $html .= "<div class='recipeImage'>";
+        $html .= "<img src='$this->imageURL'/>";
+        $html .= "</div>";
+        $html .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
+        $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
+        $html .= "</div>";
+        $html .= "<div class='right'>";
+        $html .= "<h5>$this->title</h5>";
+        $html .= "<p>Ingredients: $this->ingredients </p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        return $html;
+    }
+
+    /**
      * Limits the number of ingredients to 21
      *
      * @param [string] $phrase The string of ingredients to be trimmed
