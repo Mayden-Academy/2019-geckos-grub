@@ -11,7 +11,7 @@ class Fridge {
 
     }
 
-    public function saveRecipe($recipe)
+    public function saveRecipe(array $recipe): array
     {
 
     }
