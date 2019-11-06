@@ -5,10 +5,14 @@ namespace GRUB;
 class Fridge {
 
     /**
-     * @var \PDO
+     * @var \PDO database connection
      */
     private $db;
 
+    /**
+     * Fridge constructor.
+     * @param \PDO $db
+     */
     public function __construct(\PDO $db)
     {
         $this->db = $db;
