@@ -12,15 +12,15 @@ class FormDataHandler
 
     /**
      * @param $formData post from the form
-     * @return array of ingredients from the user , validated
+     * @return array of ingredients from the user, validated
      */
     public function processData(array $formData) :array{
        foreach($formData as $key=>$value){
            if($key == 'userIngredients'){
-               $userIngredients = explode (' ',$value);
+               $userIngredients = explode (' ', $value);
                $userIngredients= UserIngredientValidator::validateUserIngredients($userIngredients);
                $this->ingredientsArray=array_merge($this->ingredientsArray, $userIngredients);
-           }else{
+           } else {
                $ingredient = Validator::validateIngredient($key);
                array_push($this->ingredientsArray, $ingredient);
            }
