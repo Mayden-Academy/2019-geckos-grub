@@ -10,9 +10,9 @@ class RecipeTest extends TestCase
      */
     public function testValidateFormSuccess()
     {
-        $formData = ["onions" => "on", "turnip" => "on", "lemon" => "on"];
-        $validation  = GRUB\Validator::ValidateForm($formData);
-        $expected = ["onions", "turnip", "lemon"];
+        $formData = "onions" ;
+        $validation  = GRUB\Validator::validateIngredient($formData);
+        $expected = "onions";
         $this->assertEquals($validation, $expected);
     }
 
@@ -20,9 +20,9 @@ class RecipeTest extends TestCase
      * Tests for graceful failure of the validateForm function
      */
     public function testValidateFormFailure() {
-        $formData = [10, 41, 3259703498];
-        $validation = GRUB\Validator::ValidateForm($formData);
-        $expected = [0, 1, 2];
+        $formData = 10;
+        $validation = GRUB\Validator::validateIngredient($formData);
+        $expected = 10;
         $this->assertEquals($validation, $expected);
     }
 
@@ -31,8 +31,8 @@ class RecipeTest extends TestCase
      */
     public function testValidateFormMalformed()
     {
-        $formData = "beans";
+        $formData = ['jelly'];
         $this->expectException(TypeError::class);
-        $case = GRUB\Validator::ValidateForm($formData);
+        $case = GRUB\Validator::validateIngredient($formData);
     }
 }
