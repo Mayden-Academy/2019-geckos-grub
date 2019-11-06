@@ -2,6 +2,7 @@
 
 namespace GRUB\Recipe;
 use PDO;
+
 /**
  * Class to create recipe entities from DB
  */
