@@ -8,7 +8,8 @@ use GRUB\Validator;
 
 if($_POST != []) {
     $htmlOut = '';
-    $ingredients = Validator::validateForm($_POST);
+    $formDataHandler = new GRUB\FormDataHandler();
+    $ingredients = $formDataHandler->processData($_POST);
     $request = new Curl($ingredients);
     $recipeHydrator = new RecipeHydrator($request);
     $recipes = $recipeHydrator->getRecipes();
