@@ -1,8 +1,7 @@
 <?php
 
 namespace GRUB;
-/*
-* Abstract class with a static function used for validation of user-inputted ingredients
+
 /**
  * Class UserIngredientValidator class with a static function used for validation of user-inputted ingredients
  * 
@@ -27,7 +26,7 @@ abstract class UserIngredientValidator {
 			}
 			return $validatedIngredients;
 		} else {
-			return "Invalid data. Please try again.";
+			echo "<p>Invalid data. Please try again.</p>";
 		}
 	}
 }
