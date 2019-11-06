@@ -18,6 +18,10 @@ class Fridge {
         $this->db = $db;
     }
 
+    /**
+     * @param array $recipe
+     * @return bool
+     */
     public function saveRecipe(array $recipe)
     {
         $statement = "INSERT INTO `recipes` (`title`, `href`, `thumbnail`, `ingredients`) VALUES (?, ?, ?, ?)";
