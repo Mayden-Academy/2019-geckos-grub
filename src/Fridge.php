@@ -2,11 +2,9 @@
 
 namespace GRUB;
 
-use PDO;
-
 class Fridge {
 
-    public $db;
+    private $db;
 
     public function __construct(\PDO $db)
     {
