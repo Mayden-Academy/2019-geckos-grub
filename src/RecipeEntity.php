@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\recipe;
 
 /**
  * Class for a recipe object
