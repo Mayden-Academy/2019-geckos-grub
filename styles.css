@@ -4,10 +4,12 @@
 
 body {
     font-size: 40px;
+    font-family: Helvetica, serif;
+    background-image: linear-gradient(#9cf59c, #fff);
 }
 
 .container {
-    width: 40%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
 }
@@ -21,8 +23,60 @@ body {
     margin: 0;
 }
 
+.ingredient label {
+    float: left;
+}
+
 input {
     float: left;
     width: 60px;
     height: 60px;
+}
+
+.recipe {
+    overflow: auto;
+    margin: 20px 0;
+    min-height: 150px;
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    border: 2px solid #464646;
+    box-shadow: 5px 5px;
+}
+
+.recipe h5 {
+    margin: 0;
+}
+
+.recipe p {
+    font-size: 18px;
+}
+
+.recipe button {
+    margin-top: 6px;
+    background-color: #FEDEB7;
+    font-size: 20px;
+    font-style: italic;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recipe img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+}
+
+.recipe div {
+    min-height: 170px;
+    padding: 5px;
+}
+
+.recipe .left {
+    float: left;
+    width: 40%;
+}
+ 
+.recipe .right {
+    float: right;
+    width: 60%;
 }

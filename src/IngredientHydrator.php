@@ -14,6 +14,13 @@ class IngredientHydrator {
     public $ingredients;
 
     /**
+     * Property for holding a database object
+     *
+     * @var PDO Database Object
+     */
+    private $db;
+
+    /**
      * IngredientHydrator constructor.
      *
      * @param Db $db
@@ -22,20 +29,19 @@ class IngredientHydrator {
      */
     public function __construct(\PDO $db)
     {
-        $query = $db->prepare("SELECT `name` FROM `ingredients`;");
-        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
-        $query->execute();
-        $this->ingredients = $query->fetchAll();
+        $this->db = $db;
     }
 
     /**
      * Instantiates ingredient entity objects
      *
-     * @param array $results
      *
      * @return array of ingredient entity objects
      */
     public function getIngredients() {
-        return $this->ingredients;
+        $query = $this->db->prepare("SELECT `name` FROM `ingredients`;");
+        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
+        $query->execute();
+        return $query->fetchAll();
     }
 }
