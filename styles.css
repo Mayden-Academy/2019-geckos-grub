@@ -99,6 +99,7 @@ button {
     font-size: 16px;
     border-radius: 5px;
 
+
 }
 
 input.submit {
@@ -109,6 +110,7 @@ input.submit {
     width: 100px;
     height: 40px;
     border-radius: 5px;
+    margin-bottom: 40px;
 
 
 }
