@@ -112,7 +112,8 @@ class RecipeEntity {
      * @param [string] $phrase The string of ingredients to be trimmed
      * @return string Number of ingredients limited to 21
      */
-    private function limit_ingredients(string $phrase) :string {
+    private function limit_ingredients(string $phrase) :string
+    {
         $phrase_array = explode(', ',$phrase);
         if(count($phrase_array) > 21) {
             $phrase = implode(', ', array_slice($phrase_array, 0, 21)) . '...';
