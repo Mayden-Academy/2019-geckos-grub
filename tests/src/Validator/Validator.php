@@ -9,7 +9,7 @@ class RecipeTest extends TestCase
      * Tests for success of the validateForm function
      */
     public function testValidateFormSuccess()
-    {s
+    {
         $formData = "onions" ;
         $validation  = GRUB\Validator\Validator::validateIngredient($formData);
         $expected = "onions";
