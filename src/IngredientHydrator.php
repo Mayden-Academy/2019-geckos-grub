@@ -13,6 +13,11 @@ class IngredientHydrator {
      */
     public $ingredients;
 
+    /**
+     * Property for holding a database object
+     *
+     * @var PDO Database Object
+     */
     private $db;
 
     /**
