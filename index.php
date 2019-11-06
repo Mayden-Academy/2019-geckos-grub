@@ -23,7 +23,7 @@ if(isset($_GET['message'])) {
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
     <body>
-        <div class="container">
+        <container>
             <h1>GRUB</h1>
             <div>
                 <h6>Please select the ingredients you would like to use</h6>
@@ -34,7 +34,7 @@ if(isset($_GET['message'])) {
                 <input class="extras" type="text" name="userIngredients" placeholder="marmite apple spinach beetroot"/>
                 <input class="submit" type="submit">
             </form>
-        </div>
+        </container>
     </body>
 </html>
 
