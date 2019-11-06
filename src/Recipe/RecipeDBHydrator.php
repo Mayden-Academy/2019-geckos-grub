@@ -26,7 +26,7 @@ class RecipeDBHydrator
     }
 
     /**
-     * Function that retrives the recipe objects from the DB
+     * Function that retrieves the recipe objects from the DB
      *
      * @return array Array of recipe objects
      */
