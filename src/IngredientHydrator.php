@@ -38,7 +38,8 @@ class IngredientHydrator {
      *
      * @return array of ingredient entity objects
      */
-    public function getIngredients() {
+    public function getIngredients()
+    {
         $query = $this->db->prepare("SELECT `name` FROM `ingredients`;");
         $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
         $query->execute();
