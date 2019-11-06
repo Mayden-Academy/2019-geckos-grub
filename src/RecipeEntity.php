@@ -2,10 +2,37 @@
 
 namespace GRUB;
 
+/**
+ * Class for a recipe object
+ */
 class RecipeEntity {
+    
+    /**
+     * Recipe title
+     *
+     * @var string Recipe title
+     */
     private $title = "";
+    
+    /**
+     * Recipe URL
+     *
+     * @var string Recipe URL
+     */
     private $link = "";
+    
+    /**
+     * Recipe Image
+     *
+     * @var string Recipe Image
+     */
     private $imageURL = "";
+    
+    /**
+     * Recipe ingredients
+     *
+     * @var string Recipe ingredients
+     */
     private $ingredients = "";
 
     /**
