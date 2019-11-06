@@ -1,6 +1,8 @@
 <?php
 
 require_once('../../src/FormDataHandler.php');
+require_once('../../src/Validator.php');
+require_once('../../src/UserIngredientValidator.php');
 use PHPUnit\Framework\TestCase;
 
 class FormTest extends TestCase
