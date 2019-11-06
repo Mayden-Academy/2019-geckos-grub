@@ -2,7 +2,7 @@
 
 require_once "vendor/autoload.php";
 
-$ingredientHydrator = new GRUB\IngredientHydrator(GRUB\Db::getDB());
+$ingredientHydrator = new GRUB\Ingredient\IngredientHydrator(GRUB\Resource\Db::getDB());
 $ingredients = $ingredientHydrator->getIngredients();
 $ingredientForm = "";
 
