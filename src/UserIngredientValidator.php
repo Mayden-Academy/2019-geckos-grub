@@ -3,7 +3,11 @@
 namespace GRUB;
 /*
 * Abstract class with a static function used for validation of user-inputted ingredients
-*/
+/**
+ * Class UserIngredientValidator class with a static function used for validation of user-inputted ingredients
+ * 
+ * @packages GRUB
+ */
 abstract class UserIngredientValidator {
     /**
 	* Function to validate ingredients input by user and return a 'clean' array of ingredients with whitespace removed
