@@ -81,7 +81,7 @@ class RecipeEntity {
     }
 
     /**
-     * Generating HTML from recipe properties.
+     * Generating HTML from recipe properties with delete button for saved recipes.
      *
      * @return string HTML code.
      */
