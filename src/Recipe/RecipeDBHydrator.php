@@ -31,7 +31,7 @@ class RecipeDBHydrator
      */
     public function getRecipesFromDB(): array
     {
-        $statement = "SELECT `title`,`link`,`imageURL`,`ingredients` FROM `recipes`;";
+        $statement = "SELECT `title`, `link`, `imageURL`, `ingredients` FROM `recipes`;";
         $query = $this->db->prepare($statement);
         $query->setFetchMode(PDO::FETCH_CLASS, 'GRUB\Recipe\RecipeEntity');
         $query->execute();
