@@ -8,7 +8,7 @@ class Fridge {
 
     public function __construct($db)
     {
-
+        $this->db = $db;
     }
 
     public function saveRecipe(array $recipe): array
