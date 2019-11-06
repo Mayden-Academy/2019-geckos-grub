@@ -2,6 +2,7 @@
 
 namespace GRUB\Recipe;
 
+
 /**
  * Class for a recipe object
  */
@@ -72,6 +73,28 @@ class RecipeEntity {
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
+        $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
+        $html .= "</div>";
+        $html .= "<div class='right'>";
+        $html .= "<h5>$this->title</h5>";
+        $html .= "<p>Ingredients: $this->ingredients </p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        return $html;
+    }
+
+    /**
+     * Generating HTML from recipe properties with delete button for saved recipes.
+     *
+     * @return string HTML code.
+     */
+    public function generateHTMLSaved(): string {
+        $html = "<div class='recipe'>";
+        $html .= "<div class='left'>";
+        $html .= "<div class='recipeImage'>";
+        $html .= "<img src='$this->imageURL'/>";
+        $html .= "</div>";
+        $html .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
         $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
         $html .= "</div>";
         $html .= "<div class='right'>";
