@@ -11,17 +11,21 @@ class StackTest extends TestCase {
      * @return void
      */
 	public function testSuccessRecipeEntityGenerateHTML(){
-        $testIngredient = new GRUB\RecipeEntity ('string','string','string',['string']);
+        $testIngredient = new GRUB\RecipeEntity ('string','string','string','string');
         $result = $testIngredient->generateHTML();
-        $expected = "";
-        $expected .= "<div class='recipe'>";
-        $expected .= "<a href='string'>";
-        $expected .= "<h3>string</h3>";
+        $expected = "<div class='recipe'>";
+        $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='string'/>";
         $expected .= "</div>";
-        $expected .= "<p>Ingredients: string  </p>";
+        $expected .= "<a href='string'>";
+        $expected .= "<button>Link to recipe</button>";
         $expected .= "</a>";
+        $expected .= "</div>";
+        $expected .= "<div class='right'>";
+        $expected .= "<h5>string</h5>";
+        $expected .= "<p>Ingredients: string </p>";
+        $expected .= "</div>";
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
@@ -31,17 +35,21 @@ class StackTest extends TestCase {
      * @return void
      */
     public function testFailureRecipeEntityGenerateHTML(){
-        $testIngredient = new GRUB\RecipeEntity (9,9,9,[9]);
+        $testIngredient = new GRUB\RecipeEntity (9,9,9,9);
         $result = $testIngredient->generateHTML();
-        $expected = "";
-        $expected .= "<div class='recipe'>";
-        $expected .= "<a href='9'>";
-        $expected .= "<h3>9</h3>";
+        $expected = "<div class='recipe'>";
+        $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='9'/>";
         $expected .= "</div>";
-        $expected .= "<p>Ingredients: 9  </p>";
+        $expected .= "<a href='9'>";
+        $expected .= "<button>Link to recipe</button>";
         $expected .= "</a>";
+        $expected .= "</div>";
+        $expected .= "<div class='right'>";
+        $expected .= "<h5>9</h5>";
+        $expected .= "<p>Ingredients: 9 </p>";
+        $expected .= "</div>";
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
@@ -52,6 +60,6 @@ class StackTest extends TestCase {
      */
     public function testMalformedRecipeEntityGenerateHTML(){
         $this->expectException(TypeError::class);
-        $case = new GRUB\RecipeEntity ([],[],[],9);
+        $case = new GRUB\RecipeEntity ([],[],[],[]);
     }
 }
