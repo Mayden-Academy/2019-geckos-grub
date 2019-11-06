@@ -88,7 +88,8 @@ class RecipeEntity {
      *
      * @return string HTML code.
      */
-    public function generateHTMLSaved(): string {
+    public function generateHTMLSaved(): string
+    {
         $html = "<div class='recipe'>";
         $html .= "<div class='left'>";
         $html .= "<div class='recipeImage'>";
