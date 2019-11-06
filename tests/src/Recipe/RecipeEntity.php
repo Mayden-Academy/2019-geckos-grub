@@ -63,7 +63,8 @@ class StackTest extends TestCase {
      *
      * @return void
      */
-    public function testMalformedRecipeEntityGenerateHTML(){
+    public function testMalformedRecipeEntityGenerateHTML()
+    {
         $this->expectException(TypeError::class);
         $case = new GRUB\Recipe\RecipeEntity ([],[],[],[]);
     }
@@ -117,7 +118,7 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
-    
+
     /**
      * Testing for malformed code. Passed in arrays not strings.
      *
