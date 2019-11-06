@@ -8,7 +8,7 @@ body {
     background-image: linear-gradient(#9cf59c, #fff);
 }
 
-.container {
+container {
     width: 70%;
     margin: 0 auto;
     text-align: center;
