@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Validator;
 
 /**
  * Class UserIngredientValidator class with a static function used for validation of user-inputted ingredients

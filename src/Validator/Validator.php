@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Validator;
 
 /*
 * Abstract class with a static function used for form validation

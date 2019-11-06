@@ -1,5 +1,7 @@
 <?php
-namespace GRUB;
+namespace GRUB\Resource;
+use GRUB\Validator\Validator;
+use GRUB\Validator\UserIngredientValidator;
 /**
  * @class FormDataHandler that provides method to process form data into an array
  */

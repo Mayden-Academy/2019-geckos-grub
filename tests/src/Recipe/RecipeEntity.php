@@ -1,6 +1,6 @@
 <?php
 
-require '../../src/RecipeEntity.php'; // Links to another php file, needed when testing
+require '../../../src/Recipe/RecipeEntity.php'; // Links to another php file, needed when testing
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,7 +11,7 @@ class StackTest extends TestCase {
      * @return void
      */
 	public function testSuccessRecipeEntityGenerateHTML(){
-        $testIngredient = new GRUB\RecipeEntity ('string','string','string','string');
+        $testIngredient = new GRUB\Recipe\RecipeEntity ('string','string','string','string');
         $result = $testIngredient->generateHTML();
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -35,7 +35,7 @@ class StackTest extends TestCase {
      * @return void
      */
     public function testFailureRecipeEntityGenerateHTML(){
-        $testIngredient = new GRUB\RecipeEntity (9,9,9,9);
+        $testIngredient = new GRUB\Recipe\RecipeEntity (9,9,9,9);
         $result = $testIngredient->generateHTML();
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -60,6 +60,6 @@ class StackTest extends TestCase {
      */
     public function testMalformedRecipeEntityGenerateHTML(){
         $this->expectException(TypeError::class);
-        $case = new GRUB\RecipeEntity ([],[],[],[]);
+        $case = new GRUB\Recipe\RecipeEntity ([],[],[],[]);
     }
 }

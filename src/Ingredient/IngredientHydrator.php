@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Ingredient;
 
 /**
  * Class IngredientHydrator uses Db connection to fetch ingredients array from db
@@ -41,7 +41,7 @@ class IngredientHydrator {
     public function getIngredients()
     {
         $query = $this->db->prepare("SELECT `name` FROM `ingredients`;");
-        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\IngredientEntity');
+        $query->setFetchMode(\PDO::FETCH_CLASS, 'GRUB\Ingredient\IngredientEntity');
         $query->execute();
         return $query->fetchAll();
     }
