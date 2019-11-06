@@ -29,4 +29,15 @@ class Fridge {
         $query = $this->db->prepare($statement);
         return $query->execute([$recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']]);
     }
+    /**
+     * @param array $recipe the recipe to be delete by the user
+     *
+     * @return bool whether the db query was successful
+     */
+    public function deleteRecipe(array $recipe): bool
+    {
+        $statement = "DELETE FROM `recipes` (`title`, `link`, `imageURL`, `ingredients`) WHERE (?, ?, ?, ?)";
+        $query = $this->db->prepare($statement);
+        return $query->execute([$recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']]);
+    }
 }
