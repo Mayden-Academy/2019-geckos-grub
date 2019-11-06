@@ -19,10 +19,11 @@ class Fridge {
     }
 
     /**
-     * @param array $recipe
-     * @return bool
+     * @param array $recipe the recipe to be saved by the user
+     *
+     * @return bool whether the db query was successful
      */
-    public function saveRecipe(array $recipe)
+    public function saveRecipe(array $recipe): bool
     {
         $statement = "INSERT INTO `recipes` (`title`, `link`, `imageURL`, `ingredients`) VALUES (?, ?, ?, ?)";
         $query = $this->db->prepare($statement);
