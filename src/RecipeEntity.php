@@ -88,8 +88,9 @@ class RecipeEntity {
      */
     private function limit_ingredients(string $phrase) :string {
         $phrase_array = explode(', ',$phrase);
-        if(count($phrase_array) > 21 && 21 > 0)
-           $phrase = implode(', ',array_slice($phrase_array, 0, 21)).'...';
+        if(count($phrase_array) > 21) {
+            $phrase = implode(', ', array_slice($phrase_array, 0, 21)) . '...';
+        }
         return $phrase;
      }
 }
