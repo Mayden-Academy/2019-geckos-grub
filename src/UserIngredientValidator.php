@@ -15,7 +15,7 @@ abstract class UserIngredientValidator {
 	*
 	* @return array of validated user-inputted ingredients
 	*/
-	public static function validateUserIngredients(array $explodedUserIngredients) :array {
+	public static function validateUserIngredients(array $explodedUserIngredients) {
 	  $validatedIngredients = [];
 		if ($explodedUserIngredients != []){
 			foreach ($explodedUserIngredients as $ingredient){
