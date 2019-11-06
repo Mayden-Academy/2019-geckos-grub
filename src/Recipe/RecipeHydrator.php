@@ -1,5 +1,6 @@
 <?php
-namespace GRUB;
+namespace GRUB\Recipe;
+use GRUB\Resource\Curl;
 
 /**
  * @class Takes the output from the Curl class and outputs a array with all the information
