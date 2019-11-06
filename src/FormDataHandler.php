@@ -18,7 +18,7 @@ class FormDataHandler
        foreach($formData as $key=>$value){
            if($key == 'userIngredients'){
                $userIngredients = explode (' ', $value);
-               $userIngredients= UserIngredientValidator::validateUserIngredients($userIngredients);
+               $userIngredients = UserIngredientValidator::validateUserIngredients($userIngredients);
                $this->ingredientsArray=array_merge($this->ingredientsArray, $userIngredients);
            } else {
                $ingredient = Validator::validateIngredient($key);
