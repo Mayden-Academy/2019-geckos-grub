@@ -14,16 +14,16 @@ abstract class Validator {
  * 
  * @return array of validated ingredients
  */
-public static function validateForm(array $formData) :array {
-    if ($formData != []){
-        $ingredients = [];
-        foreach ($formData as $ingredient => $state){
-            $ingredient = htmlentities($ingredient);
-            array_push($ingredients, $ingredient);
+    public static function validateForm(array $formData) :array {
+        if ($formData != []){
+            $ingredients = [];
+            foreach ($formData as $ingredient => $state){
+                $ingredient = htmlentities($ingredient);
+                array_push($ingredients, $ingredient);
+            }
+            return $ingredients;
+        } else {
+        return 'Invalid data. Please try again.';
         }
-        return $ingredients;
-    } else {
-       return 'Invalid data. Please try again.';
     }
-}
 }

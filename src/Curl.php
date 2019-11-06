@@ -6,6 +6,10 @@ namespace GRUB;
 * Used for creating an API connection
 **/
 class Curl {
+
+    /**
+     * Base url for the RecipePuppy API
+     */
     const BASEURL = "http://www.recipepuppy.com/api/";
 
     /**
@@ -21,7 +25,7 @@ class Curl {
     /**
      * construct that requires ingredients array
      */
-    public function __construct($ingredients)
+    public function __construct(array $ingredients)
     {
         $this->ch = curl_init();
         $this->ingredients = $ingredients;
