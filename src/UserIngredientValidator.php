@@ -10,7 +10,7 @@ abstract class UserIngredientValidator {
 	*
 	* @param array $explodedUserIngredients an array of the user ingredients submitted from index.php
 	*
-	* @returns array of validated user-inputted ingredients
+	* @return array of validated user-inputted ingredients
 	*/
 	public static function validateUserIngredients(array $explodedUserIngredients) :array {
         private $validatedIngredients = [];
