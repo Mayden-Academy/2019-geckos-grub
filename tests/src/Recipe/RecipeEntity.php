@@ -5,6 +5,7 @@ require '../../../src/Recipe/RecipeEntity.php'; // Links to another php file, ne
 use PHPUnit\Framework\TestCase;
 
 class StackTest extends TestCase {
+
     /**
      * Testing for success with generating HTML
      *
@@ -30,6 +31,7 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+
     /**
      * Testing for failure in generating HTML. Passed inergers as opposed to strings.
      *
@@ -55,6 +57,7 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+
     /**
      * Testing for malformed code. Passed in arrays not strings.
      *
@@ -89,6 +92,7 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+
     /**
      * Testing for failure in generating HTML. Passed inergers as opposed to strings.
      *
@@ -113,6 +117,7 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+    
     /**
      * Testing for malformed code. Passed in arrays not strings.
      *
