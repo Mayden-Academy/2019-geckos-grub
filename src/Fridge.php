@@ -15,8 +15,8 @@ class Fridge {
 
     public function saveRecipe(array $recipe)
     {
-        $statement = "INSERT INTO `recipes` (`title`, `imageURL`, `link`, `ingredients`) VALUES (?, ?, ?, ?)";
+        $statement = "INSERT INTO `recipes` (`title`, `href`, `thumbnail`, `ingredients`) VALUES (?, ?, ?, ?)";
         $query = $this->db->prepare($statement);
-        return $query->execute([$recipe['title'], $recipe['imageURL'], $recipe['link'], $recipe['ingredients']]);
+        return $query->execute([$recipe['title'], $recipe['href'], $recipe['thumbnail'], $recipe['ingredients']]);
     }
 }
