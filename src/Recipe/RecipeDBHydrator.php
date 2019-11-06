@@ -5,7 +5,8 @@ use PDO;
 /**
  * Class to create recipe entities from DB
  */
-class RecipeDBHydrator {
+class RecipeDBHydrator
+{
     /**
      * Property to store DB object
      *
