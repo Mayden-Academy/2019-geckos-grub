@@ -24,7 +24,7 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
-        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $expected .= "<input class='hidden' type='text' name='link' value='$this->link'>";
         $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
@@ -102,11 +102,10 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
-        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
-        $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
+        $expected .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $expected .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
-        $expected .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
         $expected .= "<a href='string'><button>Link to Recipe</button></a>";
         $expected .= "</div>";
         $expected .= "</div>";
@@ -135,10 +134,9 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";
         $expected .= "<input class='hidden' type='text' name='recipeLink' value='9'>";
-        $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
+        $expected .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
-        $expected .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
         $expected .= "<a href='9'><button>Link to Recipe</button></a>";
         $expected .= "</div>";
         $expected .= "</div>";
