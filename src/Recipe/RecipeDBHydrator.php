@@ -29,7 +29,7 @@ class RecipeDBHydrator
      *
      * @return array Array of recipe objects
      */
-    public function getRecipesFromDB() : array
+    public function getRecipesFromDB(): array
     {
         $statement = "SELECT `title`,`link`,`imageURL`,`ingredients` FROM `recipes`;";
         $query = $this->db->prepare($statement);
