@@ -96,7 +96,7 @@ class StackTest extends TestCase {
     }
 
     /**
-     * Testing for failure in generating HTML. Passed inergers as opposed to strings.
+     * Testing for failure in generating HTML. Passed integers as opposed to strings.
      *
      * @return void
      */
