@@ -108,7 +108,7 @@ class RecipeEntity {
         $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
         $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
         $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
-        $html .= "<input class='hidden' type='text' name='recipeLink' value='$this->link'>";
+        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
         $html .= "<button type='submit' name='saveButton'>Save Recipe</button>";
         $html .= "</form>";
         $html .= "<div class='recipeButton'>";
