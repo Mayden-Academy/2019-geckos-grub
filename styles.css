@@ -43,6 +43,10 @@ input {
     box-shadow: 5px 5px;
 }
 
+h1 {
+    margin: 0;
+}
+
 .recipe h5 {
     margin: 0;
 }
@@ -51,7 +55,7 @@ input {
     font-size: 18px;
 }
 
-.recipe button {
+button {
     margin-top: 6px;
     background-color: #FEDEB7;
     font-size: 20px;
@@ -79,4 +83,30 @@ input {
 .recipe .right {
     float: right;
     width: 60%;
+}
+
+.container form h6 {
+    text-align: left;
+    display: inline-block;
+    float: left;
+    margin: 5px;
+}
+
+.container .extras {
+    width: 200px;
+    height: 40px;
+    margin-left: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input.submit {
+    font-size: 20px;
+    margin-left: 40px;
+    background-color: #FEDEB7;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 40px;
 }

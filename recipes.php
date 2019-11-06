@@ -1,6 +1,6 @@
 <?php
 
-require_once("vendor/autoload.php");
+require_once "vendor/autoload.php";
 
 use GRUB\Curl;
 use GRUB\RecipeHydrator;
@@ -8,7 +8,8 @@ use GRUB\Validator;
 
 if($_POST != []) {
     $htmlOut = '';
-    $ingredients = Validator::validateForm($_POST);
+    $formDataHandler = new GRUB\FormDataHandler();
+    $ingredients = $formDataHandler->processData($_POST);
     $request = new Curl($ingredients);
     $recipeHydrator = new RecipeHydrator($request);
     $recipes = $recipeHydrator->getRecipes();
@@ -33,6 +34,8 @@ if($_POST != []) {
     <body>
         <div class="container">
             <h1>GRUB</h1>
+            <a href='index.php'><button>Back</button></a>
+            <br>
                 <?php echo $htmlOut; ?>    
         </div>
     </body>
