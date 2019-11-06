@@ -11,7 +11,7 @@ class Fridge {
 
     /**
      * Fridge constructor.
-     * @param \PDO $db
+     * @param \PDO $db database connection
      */
     public function __construct(\PDO $db)
     {
