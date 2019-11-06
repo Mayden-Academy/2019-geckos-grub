@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Resource;
 
 class Fridge {
 
