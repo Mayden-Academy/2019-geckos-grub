@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../src/Validator.php');
+require_once('../../../src/Validator/Validator.php');
 use PHPUnit\Framework\TestCase;
 
 class RecipeTest extends TestCase
@@ -9,9 +9,9 @@ class RecipeTest extends TestCase
      * Tests for success of the validateForm function
      */
     public function testValidateFormSuccess()
-    {
+    {s
         $formData = "onions" ;
-        $validation  = GRUB\Validator::validateIngredient($formData);
+        $validation  = GRUB\Validator\Validator::validateIngredient($formData);
         $expected = "onions";
         $this->assertEquals($validation, $expected);
     }
@@ -21,7 +21,7 @@ class RecipeTest extends TestCase
      */
     public function testValidateFormFailure() {
         $formData = 10;
-        $validation = GRUB\Validator::validateIngredient($formData);
+        $validation = GRUB\Validator\Validator::validateIngredient($formData);
         $expected = 10;
         $this->assertEquals($validation, $expected);
     }
@@ -33,6 +33,6 @@ class RecipeTest extends TestCase
     {
         $formData = ['jelly'];
         $this->expectException(TypeError::class);
-        $case = GRUB\Validator::validateIngredient($formData);
+        $case = GRUB\Validator\Validator::validateIngredient($formData);
     }
 }

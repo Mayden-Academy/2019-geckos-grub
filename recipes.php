@@ -2,13 +2,13 @@
 
 require_once "vendor/autoload.php";
 
-use GRUB\Curl;
-use GRUB\RecipeHydrator;
-use GRUB\Validator;
+use GRUB\Resource\Curl;
+use GRUB\Recipe\RecipeHydrator;
+use GRUB\Validator\Validator;
 
 if($_POST != []) {
     $htmlOut = '';
-    $formDataHandler = new GRUB\FormDataHandler();
+    $formDataHandler = new GRUB\Resource\FormDataHandler();
     $ingredients = $formDataHandler->processData($_POST);
     $request = new Curl($ingredients);
     $recipeHydrator = new RecipeHydrator($request);
