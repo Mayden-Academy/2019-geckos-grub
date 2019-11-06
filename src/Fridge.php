@@ -6,7 +6,7 @@ class Fridge {
 
     public $db;
 
-    public function __construct($db)
+    public function __construct(\PDO $db)
     {
         $this->db = $db;
     }
