@@ -76,7 +76,7 @@ class StackTest extends TestCase {
      */GenerateHTML
     public function testSuccessRecipeEntity()
     {
-        $testIngredient = new GRUB\RecipeEntity ('string','string','string','string');
+        $testIngredient = new GRUB\RecipeEntity ('string', 'string', 'string', 'string');
         $result = $testIngredient->generateHTML();
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
