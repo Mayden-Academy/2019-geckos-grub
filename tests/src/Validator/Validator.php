@@ -9,7 +9,7 @@ class RecipeTest extends TestCase
      * Tests for success of the validateForm function
      */
     public function testValidateFormSuccess()
-    {s
+    {
         $formData = "onions" ;
         $validation  = GRUB\Validator\Validator::validateIngredient($formData);
         $expected = "onions";
@@ -19,7 +19,8 @@ class RecipeTest extends TestCase
     /**
      * Tests for graceful failure of the validateForm function
      */
-    public function testValidateFormFailure() {
+    public function testValidateFormFailure()
+    {
         $formData = 10;
         $validation = GRUB\Validator\Validator::validateIngredient($formData);
         $expected = 10;

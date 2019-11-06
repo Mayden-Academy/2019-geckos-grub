@@ -14,7 +14,8 @@ abstract class Validator {
  * 
  * @return string validated ingredient
  */
-    public static function validateIngredient(string $ingredient) :string {
+    public static function validateIngredient(string $ingredient) :string
+    {
         $ingredient = htmlentities($ingredient);
         return $ingredient;
     }

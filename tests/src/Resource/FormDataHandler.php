@@ -22,7 +22,8 @@ class FormTest extends TestCase
     /**
      * Tests for graceful failure of the FormDataHandler function
      */
-    public function testFormDataHandlerFailure() {
+    public function testFormDataHandlerFailure()
+    {
         $formData = [10, 41, 3259703498,'345'];
         $formDataHandler= new GRUB\Resource\FormDataHandler();
         $validation  = $formDataHandler->processData($formData);

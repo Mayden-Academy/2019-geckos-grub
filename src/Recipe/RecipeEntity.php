@@ -2,6 +2,7 @@
 
 namespace GRUB\Recipe;
 
+
 /**
  * Class for a recipe object
  */
@@ -46,7 +47,8 @@ class RecipeEntity {
      *
      * @param string $ingredients Array of the ingredients required for the recipe
      */
-    public function __construct(string $title, string $link, string $imageURL, string $ingredients){
+    public function __construct(string $title, string $link, string $imageURL, string $ingredients)
+    {
               $this->title = html_entity_decode($title);
               $this->link = $link;
 
@@ -64,7 +66,8 @@ class RecipeEntity {
      *
      * @return string HTML code. 
      */
-    public function generateHTML(): string {
+    public function generateHTML(): string
+    {
         $html = "<div class='recipe'>";
         $html .= "<div class='left'>";
         $html .= "<div class='recipeImage'>";
@@ -90,12 +93,36 @@ class RecipeEntity {
     }
 
     /**
+     * Generating HTML from recipe properties with delete button for saved recipes.
+     *
+     * @return string HTML code.
+     */
+    public function generateHTMLSaved(): string
+    {
+        $html = "<div class='recipe'>";
+        $html .= "<div class='left'>";
+        $html .= "<div class='recipeImage'>";
+        $html .= "<img src='$this->imageURL'/>";
+        $html .= "</div>";
+        $html .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
+        $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
+        $html .= "</div>";
+        $html .= "<div class='right'>";
+        $html .= "<h5>$this->title</h5>";
+        $html .= "<p>Ingredients: $this->ingredients </p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        return $html;
+    }
+
+    /**
      * Limits the number of ingredients to 21
      *
      * @param [string] $phrase The string of ingredients to be trimmed
      * @return string Number of ingredients limited to 21
      */
-    private function limit_ingredients(string $phrase) :string {
+    private function limit_ingredients(string $phrase) :string
+    {
         $phrase_array = explode(', ',$phrase);
         if(count($phrase_array) > 21) {
             $phrase = implode(', ', array_slice($phrase_array, 0, 21)) . '...';
