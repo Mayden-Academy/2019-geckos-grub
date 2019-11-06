@@ -28,8 +28,8 @@ class FormTest extends TestCase
         $this->assertEquals($validation, $expected);
     }
 
-/*  Tests the type-hinting of the FormDataHandler function
-    public function testFormDataHandlerMalformed() */
+//  Tests the type-hinting of the FormDataHandler function
+    public function testFormDataHandlerMalformed()
     {
         $formData = "beans";
         $this->expectException(TypeError::class);
