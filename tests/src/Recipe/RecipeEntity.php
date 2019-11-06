@@ -57,7 +57,7 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='title' value='9'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";
-        $expected .= "<input class='hidden' type='text' name='recipeLink' value='9'>";
+        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
         $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
