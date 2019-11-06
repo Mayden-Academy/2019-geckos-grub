@@ -66,7 +66,7 @@ class StackTest extends TestCase {
     public function testMalformedRecipeEntityGenerateHTML()
     {
         $this->expectException(TypeError::class);
-        $case = new GRUB\Recipe\RecipeEntity ([],[],[],[]);
+        $case = new GRUB\Recipe\RecipeEntity ([], [], [], []);
     }
 
     /**
@@ -128,6 +128,6 @@ class StackTest extends TestCase {
      */
     public function testMalformedRecipeEntityGenerateHTML(){
         $this->expectException(TypeError::class);
-        $case = new GRUB\RecipeEntity ([],[],[],[]);
+        $case = new GRUB\RecipeEntity ([], [], [], []);
     }
 }
