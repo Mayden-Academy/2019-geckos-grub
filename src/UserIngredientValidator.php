@@ -26,7 +26,7 @@ abstract class UserIngredientValidator {
 			}
 			return $validatedIngredients;
 		} else {
-			echo "<p>Invalid data. Please try again.</p>";
+			return "<p>Invalid data. Please try again.</p>";
 		}
 	}
 }
