@@ -1,5 +1,5 @@
 <?php
-require_once('../../vendor/autoload.php');
+
 require_once('../../src/FormDataHandler.php');
 use PHPUnit\Framework\TestCase;
 
@@ -11,7 +11,7 @@ class FormTest extends TestCase
     public function testFormDataHandlerSuccess()
     {
         $formData = ["onions" => "on", "turnip" => "on", "lemon" => "on",'userIngredients'=>'mint lamb'];
-        $formDataHandler= new GRUB\FormDataHandler();
+        $formDataHandler = new GRUB\FormDataHandler();
         $validation  = $formDataHandler->processData($formData);
         $expected = ["onions", "turnip", "lemon",'mint','lamb'];
         $this->assertEquals($expected , $validation);
