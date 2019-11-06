@@ -73,7 +73,7 @@ class StackTest extends TestCase {
      * Testing for success with generating HTML
      *
      * @return void
-     */GenerateHTML
+     */
     public function testSuccessRecipeEntity()
     {
         $testIngredient = new GRUB\RecipeEntity ('string', 'string', 'string', 'string');
