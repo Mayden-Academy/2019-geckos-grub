@@ -4,16 +4,17 @@ require '../../../src/Recipe/RecipeEntity.php'; // Links to another php file, ne
 
 use PHPUnit\Framework\TestCase;
 
-class StackTest extends TestCase {
+class StackTest extends TestCase
+{
 
     /**
      * Testing for success with generating HTML
      *
      * @return void
      */
-	public function testSuccessRecipeEntityGenerateHTML()
+    public function testSuccessRecipeEntityGenerateHTML()
     {
-        $testIngredient = new GRUB\Recipe\RecipeEntity ('string','string','string','string');
+        $testIngredient = new GRUB\Recipe\RecipeEntity ('string', 'string', 'string', 'string');
         $result = $testIngredient->generateHTML(false);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -46,7 +47,7 @@ class StackTest extends TestCase {
      */
     public function testFailureRecipeEntityGenerateHTML()
     {
-        $testIngredient = new GRUB\Recipe\RecipeEntity (9,9,9,9);
+        $testIngredient = new GRUB\Recipe\RecipeEntity (9, 9, 9, 9);
         $result = $testIngredient->generateHTML(false);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -88,8 +89,9 @@ class StackTest extends TestCase {
      *
      * @return void
      */
-    public function testSuccessRecipeEntityGenerateHTMLsaved(){
-        $testIngredient = new GRUB\Recipe\RecipeEntity ('string','string','string','string');
+    public function testSuccessRecipeEntityGenerateHTMLsaved()
+    {
+        $testIngredient = new GRUB\Recipe\RecipeEntity ('string', 'string', 'string', 'string');
         $result = $testIngredient->GenerateHTML(true);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -114,13 +116,15 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+
     /**
      * Testing for failure in generating HTML. Passed inergers as opposed to strings.
      *
      * @return void
      */
-    public function testFailureRecipeEntityGenerateHTMLsaved(){
-        $testIngredient = new GRUB\Recipe\RecipeEntity (9,9,9,9);
+    public function testFailureRecipeEntityGenerateHTMLsaved()
+    {
+        $testIngredient = new GRUB\Recipe\RecipeEntity (9, 9, 9, 9);
         $result = $testIngredient->GenerateHTML(true);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
@@ -145,13 +149,15 @@ class StackTest extends TestCase {
         $expected .= "</div>";
         $this->assertEquals($expected, $result);
     }
+
     /**
      * Testing for malformed code. Passed in arrays not strings.
      *
      * @return void
      */
-    public function testMalformedRecipeEntityGenerateHTMLsaved(){
+    public function testMalformedRecipeEntityGenerateHTMLsaved()
+    {
         $this->expectException(TypeError::class);
-        $case = new GRUB\Recipe\RecipeEntity ([],[],[],[]);
+        $case = new GRUB\Recipe\RecipeEntity ([], [], [], []);
     }
 }
