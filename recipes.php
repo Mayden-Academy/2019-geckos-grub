@@ -47,8 +47,6 @@ if(isset($_GET['message'])) {
     $message = $_GET['message'];
 }
 
-
-
 ?>
 
 <html lang="en-GB">
