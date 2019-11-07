@@ -7,7 +7,7 @@ use GRUB\Resource\Db;
 
 
 /**
- * Catches save button
+ * Catches save button form
  * 
  */
 if($_POST !=[]){
