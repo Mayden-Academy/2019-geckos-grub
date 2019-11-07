@@ -29,23 +29,23 @@ if (isset($_GET['message'])) {
 ?>
 
 <html lang="en-GB">
-<head>
-    <title>GRUB</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-</head>
-<body>
-<div class="container">
-    <h1>GRUB</h1>
-    <?php
-    if ($message != "") {
-        echo "<h5>Recipe '$message' deleted</h5>";
-    }
-    ?>
-    <a href='index.php'>
-        <button>Back</button>
-    </a>
-    <br>
-    <?php echo $htmlOut; ?>
-</div>
-</body>
+    <head>
+        <title>GRUB</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h1>GRUB</h1>
+            <?php 
+            if($message != "") {
+                echo "<h5>Recipe '$message' deleted</h5>";
+            } 
+             ?>
+            <a href='index.php'><button>Back</button></a>
+            <br>
+                <?php echo $htmlOut; ?>
+        </div>
+    </body>
 </html>
