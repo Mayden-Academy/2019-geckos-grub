@@ -13,7 +13,7 @@ abstract class UserIngredientValidator {
 	*
 	* @param array $explodedUserIngredients an array of the user ingredients submitted from index.php
 	*
-	* @return array of validated user-inputted ingredients
+	* @return array of validated user-inputted ingredients OR string showing error message
 	*/
 	public static function validateUserIngredients(array $explodedUserIngredients)
     {

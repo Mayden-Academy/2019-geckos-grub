@@ -16,7 +16,7 @@ class FormDataHandler
      * @param $formData post from the form
      * @return array of ingredients from the user, validated
      */
-    public function processData(array $formData) :array
+    public function processData(array $formData): array
     {
        foreach($formData as $key=>$value){
            if($key == 'userIngredients'){

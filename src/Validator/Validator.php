@@ -10,7 +10,7 @@ abstract class Validator {
     /**
  * Function to validate post data from form submitted from index.php
  *
- * @param array $ingredient 
+ * @param string $ingredient
  * 
  * @return string validated ingredient
  */
