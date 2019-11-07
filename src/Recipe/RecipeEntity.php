@@ -72,7 +72,7 @@ class RecipeEntity
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
-        if($saved==false) {
+        if ($saved == false) {
             $html .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
             $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
             $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
@@ -80,7 +80,7 @@ class RecipeEntity
             $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
             $html .= "<button type='submit' name='saveButton'>Save Recipe</button>";
             $html .= "</form>";
-        } elseif($saved==true) {
+        } elseif ($saved == true) {
             $html .= "<form class='recipeForm' method='post'>";
             $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
             $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
