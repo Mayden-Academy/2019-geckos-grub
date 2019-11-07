@@ -25,13 +25,9 @@ class Fridge {
      */
     public function saveRecipe(array $recipe): bool
     {
-        $statement = "INSERT INTO `recipes` (`title`, `link`, `imageURL`, `ingredients`) VALUES (:title, :link, :imageURL, :ingredients)";
+        $statement = "INSERT INTO `recipes` (`title`, `link`, `imageURL`, `ingredients`) VALUES (?, ?, ?, ?)";
         $query = $this->db->prepare($statement);
-        $query->bindParam(":title", $recipe['title']);
-        $query->bindParam(":link", $recipe['link']);
-        $query->bindParam(":imageURL", $recipe['imageURL']);
-        $query->bindParam(":ingredients", $recipe['ingredients']);
-        return $query->execute();
+        return $query->execute([$recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']]);
     }
     /**
      * @param array $recipe the recipe to be delete by the user
@@ -44,5 +40,6 @@ class Fridge {
         $query = $this->db->prepare($statement);
         $query->bindParam(":link", $recipe['link']);
         return $query->execute();
+
     }
 }
