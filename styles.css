@@ -123,3 +123,7 @@ input.submit {
     border-radius: 5px;
     margin-bottom: 40px;
 }
+
+a {
+    text-decoration: none;
+}
