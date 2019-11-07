@@ -1,6 +1,7 @@
 <?php
 
 namespace GRUB\Recipe;
+
 use PDO;
 
 /**
@@ -11,7 +12,7 @@ class RecipeDBHydrator
     /**
      * Property to store DB object
      *
-     * @var PDO 
+     * @var PDO
      */
     private $db;
 
@@ -39,9 +40,9 @@ class RecipeDBHydrator
         $query = $this->db->prepare($statement);
         $query->setFetchMode(PDO::FETCH_ASSOC);
         $query->execute();
-        $savedRecipes =  $query->fetchAll();
+        $savedRecipes = $query->fetchAll();
 
-        foreach($savedRecipes as $recipe) {
+        foreach ($savedRecipes as $recipe) {
             $recipeObj = new RecipeEntity($recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']);
             array_push($recipesOut, $recipeObj);
         }
