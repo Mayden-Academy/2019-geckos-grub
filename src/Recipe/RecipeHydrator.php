@@ -1,5 +1,7 @@
 <?php
+
 namespace GRUB\Recipe;
+
 use GRUB\Resource\Curl;
 
 /**
@@ -23,7 +25,7 @@ class RecipeHydrator
      */
     public function __construct(Curl $curl)
     {
-      $this->recipesArray = $curl->makeRequest()['results'];
+        $this->recipesArray = $curl->makeRequest()['results'];
     }
 
     /**
@@ -31,7 +33,7 @@ class RecipeHydrator
      */
     public function getRecipes(): array
     {
-        foreach($this->recipesArray as $recipe){
+        foreach ($this->recipesArray as $recipe) {
             $recipe = new RecipeEntity($recipe['title'], $recipe['href'], $recipe['thumbnail'], $recipe['ingredients']);
             array_push($this->recipes, $recipe);
         }
