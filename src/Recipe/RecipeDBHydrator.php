@@ -38,7 +38,7 @@ class RecipeDBHydrator
         $query = $this->db->prepare($statement);
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "GRUB\Recipe\RecipeEntity");
         $query->execute();
-        $recipesOut =  $query->fetchAll();
+        $recipesOut = $query->fetchAll();
 
         return $recipesOut;
     }
