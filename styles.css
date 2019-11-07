@@ -129,7 +129,7 @@ button:hover {
     float: left;
     width: 40%;
 }
- 
+
 .recipe .right {
     float: right;
     width: 60%;
@@ -170,5 +170,8 @@ input.submit {
     .ingredient {
         width: 70%;
         min-width: 250px;
-    }
+  }
+  
+a {
+    text-decoration: none;
 }

@@ -9,21 +9,21 @@ $message = "";
 $htmlOut = "";
 $recipeDBHydrator = new RecipeDBHydrator(GRUB\Resource\Db::getDB());
 $recipes = $recipeDBHydrator->getRecipesFromDB();
-if(count($recipes) != 0) {
-foreach($recipes as $recipe) {
-$htmlOut .=  $recipe->generateHTMLSaved();
-}
+if (count($recipes) != 0) {
+    foreach ($recipes as $recipe) {
+        $htmlOut .= $recipe->generateHTML(true);
+    }
 } else {
-$htmlOut =  "<h3>You have no recipes saved</h3>";
+    $htmlOut = "<h3>You have no recipes saved</h3>";
 }
-if($_POST !=[]){
+if ($_POST != []) {
     $message = $_POST['title'];
-    $thefridge =new GRUB\Resource\Fridge(GRUB\Resource\Db::getDB());
+    $thefridge = new GRUB\Resource\Fridge(GRUB\Resource\Db::getDB());
     $thefridge->deleteRecipe($_POST);
     header("Location: savedRecipes.php?message=$message");
 }
 
-if(isset($_GET['message'])) {
+if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
 ?>

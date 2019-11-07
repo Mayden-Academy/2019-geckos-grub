@@ -11,7 +11,7 @@ use GRUB\Resource\Db;
  * to database. Redirects with get containing message
  * with saved recipe title to be displayed on the recipes page
  */
-if($_POST !=[]){
+if ($_POST != []) {
     $message = $_POST['title'];
     $thefridge = new Fridge(Db::getDB());
     $thefridge->saveRecipe($_POST);
