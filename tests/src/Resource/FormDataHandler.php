@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../src/Resource/FormDataHandler.php');
+require_once('../../../src/Ingredient/FormDataHandler.php');
 require_once('../../../src/Validator/Validator.php');
 require_once('../../../src/Validator/UserIngredientValidator.php');
 
