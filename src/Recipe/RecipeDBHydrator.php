@@ -1,6 +1,7 @@
 <?php
 
 namespace GRUB\Recipe;
+
 use PDO;
 
 /**
@@ -11,7 +12,7 @@ class RecipeDBHydrator
     /**
      * Property to store DB object
      *
-     * @var PDO 
+     * @var PDO
      */
     private $db;
 
@@ -33,18 +34,11 @@ class RecipeDBHydrator
      */
     public function getRecipesFromDB(): array
     {
-        $recipesOut = [];
-
         $statement = "SELECT `title`, `link`, `imageURL`, `ingredients` FROM `recipes`;";
         $query = $this->db->prepare($statement);
-        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "GRUB\Recipe\RecipeEntity");
         $query->execute();
-        $savedRecipes =  $query->fetchAll();
-
-        foreach($savedRecipes as $recipe) {
-            $recipeObj = new RecipeEntity($recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']);
-            array_push($recipesOut, $recipeObj);
-        }
+        $recipesOut = $query->fetchAll();
 
         return $recipesOut;
     }

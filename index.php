@@ -6,12 +6,12 @@ $ingredientHydrator = new GRUB\Ingredient\IngredientHydrator(GRUB\Resource\Db::g
 $ingredients = $ingredientHydrator->getIngredients();
 $ingredientForm = "";
 
-foreach($ingredients as $ingredient) {
+foreach ($ingredients as $ingredient) {
     $ingredientForm .= $ingredient->generateHTML();
 }
 
 
-if(isset($_GET['message'])) {
+if (isset($_GET['message'])) {
     echo $_GET['message'];
 }
 
@@ -46,6 +46,7 @@ if(isset($_GET['message'])) {
             </form>
         </div>
     </body>
+
 </html>
 
 

@@ -7,7 +7,8 @@ namespace GRUB\Ingredient;
  *
  * @package GRUB
  */
-class IngredientHydrator {
+class IngredientHydrator
+{
     /**
      * @var array of instantiated ingredient entity objects
      */
