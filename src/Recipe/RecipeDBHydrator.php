@@ -1,6 +1,7 @@
 <?php
 
 namespace GRUB\Recipe;
+
 use PDO;
 
 /**
@@ -11,7 +12,7 @@ class RecipeDBHydrator
     /**
      * Property to store DB object
      *
-     * @var PDO 
+     * @var PDO
      */
     private $db;
 
@@ -38,6 +39,7 @@ class RecipeDBHydrator
         $query->setFetchMode(PDO::FETCH_CLASS, "GRUB\Recipe\RecipeEntity");
         $query->execute();
         $recipesOut =  $query->fetchAll();
+
         return $recipesOut;
     }
 }
