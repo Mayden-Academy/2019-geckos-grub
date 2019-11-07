@@ -20,7 +20,8 @@ body {
 
 .ingredient {
     overflow: auto;
-    margin: 10px;
+    width: 33%;
+    float: left;
 }
 
 .ingredient p {
