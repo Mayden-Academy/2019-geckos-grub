@@ -73,7 +73,7 @@ class RecipeEntity {
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
-        $html .= "<form class='recipeForm' method='post'>";
+        $html .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
         $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
         $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
         $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
