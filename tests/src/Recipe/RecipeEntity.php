@@ -20,7 +20,8 @@ class StackTest extends TestCase {
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='string'/>";
         $expected .= "</div>";
-        $expected .= "<form class='recipeForm'>";
+        $expected .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
+        $expected .= "<input class='hidden' type='text' name='title' value='{}'>";
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
@@ -53,7 +54,8 @@ class StackTest extends TestCase {
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='9'/>";
         $expected .= "</div>";
-        $expected .= "<form class='recipeForm'>";
+        $expected .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
+        $expected .= "<input class='hidden' type='text' name='title' value='{}'>";
         $expected .= "<input class='hidden' type='text' name='title' value='9'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";
@@ -98,7 +100,7 @@ class StackTest extends TestCase {
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='string'/>";
         $expected .= "</div>";
-        $expected .= "<form class='recipeForm'>";
+        $expected .= "<form class='recipeForm' method='post'>";
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
@@ -129,7 +131,7 @@ class StackTest extends TestCase {
         $expected .= "<div class='recipeImage'>";
         $expected .= "<img src='9'/>";
         $expected .= "</div>";
-        $expected .= "<form class='recipeForm'>";
+        $expected .= "<form class='recipeForm' method='post'>";
         $expected .= "<input class='hidden' type='text' name='title' value='9'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";

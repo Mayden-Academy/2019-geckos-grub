@@ -6,6 +6,8 @@ use GRUB\Resource\Curl;
 use GRUB\Recipe\RecipeHydrator;
 use GRUB\Validator\Validator;
 
+$message = "";
+
 if($_POST != []) {
     $htmlOut = '';
     $formDataHandler = new GRUB\Resource\FormDataHandler();
@@ -21,8 +23,33 @@ if($_POST != []) {
         $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
     }
 } else {
-    header("Location: index.php?message=Please%20select%20some%20ingredients");
+    if(isset($_COOKIE['ingredients'])) {
+        $post = json_decode(json_decode($_COOKIE['ingredients'], true),true);
+        $htmlOut = '';
+        $formDataHandler = new GRUB\Resource\FormDataHandler();
+        $ingredients = $formDataHandler->processData($post);
+        $request = new Curl($ingredients);
+        $recipeHydrator = new RecipeHydrator($request);
+        $recipes = $recipeHydrator->getRecipes();
+        if(count($recipes) != 0) {
+            foreach($recipes as $recipe) {
+                $htmlOut .=  $recipe->generateHTML();
+            }
+
+        $post = "";
+        } else {
+            $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
+        }
+    } else {
+        // header("Location: index.php?message=Please%20select%20some%20ingredients");
+    }
 }
+
+if(isset($_GET['message'])) {
+    $message = $_GET['message'];
+}
+
+
 
 ?>
 
@@ -34,6 +61,11 @@ if($_POST != []) {
     <body>
         <div class="container">
             <h1>GRUB</h1>
+            <?php 
+            if($message != "") {
+                echo "<h5>Recipe '$message' saved!</h5>";
+            } 
+             ?>
             <a href='savedRecipes.php'><button>View Saved Recipes</button></a>
             <a href='index.php'><button>Back</button></a>
             <br>
