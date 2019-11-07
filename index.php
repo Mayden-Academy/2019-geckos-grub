@@ -32,7 +32,7 @@ if(isset($_GET['message'])) {
             <form method="post" action="recipes.php">
                 <?php echo $ingredientForm; ?>
                 <h6>Extra ingredients (separated by spaces): </h6>
-                <input class="extras" type="text" name="userIngredients" placeholder="marmite apple spinach beetroot"/>
+                <input class="extras" type="text" name="userIngredients" placeholder="marmite apple spinach beetroot" />
                 <input class="submit" type="submit">
             </form>
         </div>
