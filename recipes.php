@@ -26,7 +26,7 @@ if($_POST != []) {
 } else {
     /* Grabs session ingredients if present
     * so that recipes from search are still
-    * 
+    * displayed even after saving a recipe
     */
     if(isset($_SESSION['ingredients'])) {
         $htmlOut = '';
