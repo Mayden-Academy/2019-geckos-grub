@@ -5,7 +5,6 @@ require_once "vendor/autoload.php";
 use GRUB\Resource\Fridge;
 use GRUB\Resource\Db;
 
-
 /**
  * Catches save button form request from recipes.php
  * Redirects to recipes.php after saving recipe
