@@ -20,7 +20,8 @@ body {
 
 .ingredient {
     overflow: auto;
-    margin: 10px;
+    width: 33%;
+    float: left;
 }
 
 .ingredient p {
@@ -135,4 +136,15 @@ input.submit {
     height: 40px;
     border-radius: 5px;
     margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1100px){
+    .ingredient {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 700px){
+    .ingredient {
+        width: 100%;
+    }
 }
