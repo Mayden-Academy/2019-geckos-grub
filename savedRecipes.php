@@ -2,6 +2,19 @@
 
 require_once "vendor/autoload.php";
 
+use GRUB\Recipe\RecipeDBHydrator;
+
+$htmlOut = "";
+$recipeDBHydrator = new RecipeDBHydrator(GRUB\Resource\Db::getDB());
+$recipes = $recipeDBHydrator->getRecipesFromDB();
+if(count($recipes) != 0) {
+foreach($recipes as $recipe) {
+$htmlOut .=  $recipe->generateHTMLSaved();
+}
+} else {
+$htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
+}
+
 ?>
 
 <html lang="en-GB">
@@ -14,7 +27,7 @@ require_once "vendor/autoload.php";
             <h1>GRUB</h1>
             <a href='index.php'><button>Back</button></a>
             <br>
-                //recipes from database
+                <?php echo $htmlOut; ?>
         </div>
     </body>
 </html>
