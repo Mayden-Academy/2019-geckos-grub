@@ -21,6 +21,7 @@ if(isset($_GET['message'])) {
     <head>
         <title>GRUB</title>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
+        
     </head>
     <body>
         <div class="container">
@@ -30,10 +31,16 @@ if(isset($_GET['message'])) {
                 <h6>Please select the ingredients you would like to use</h6>
             </div>
             <form method="post" action="recipes.php">
-                <?php echo $ingredientForm; ?>
+                <div class="dbIngredients">
+                <?php echo $ingredientForm; 
+                      echo "<script src='checked.js' defer></script>"
+                ?>
+                </div>
+                <div class="extraIngredients">
                 <h6>Extra ingredients (separated by spaces): </h6>
                 <input class="extras" type="text" name="userIngredients" placeholder="marmite apple spinach beetroot" />
                 <input class="submit" type="submit">
+                </div>
             </form>
         </div>
     </body>

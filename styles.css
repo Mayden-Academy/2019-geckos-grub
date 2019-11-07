@@ -8,6 +8,12 @@ body {
     background-image: linear-gradient(#9cf59c, #fff);
 }
 
+form div {
+    margin: 0 auto 0 10%;
+    width: 90%;
+    overflow: auto;
+}
+
 .container {
     width: 70%;
     margin: 0 auto;
@@ -20,8 +26,23 @@ body {
 
 .ingredient {
     overflow: auto;
-    width: 33%;
+    width: 250px;
+    margin: 10px;
     float: left;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border: 2px solid #464646;
+    box-shadow: 5px 5px;
+    transition: background-color 0.25s linear;
+    transition: border-width 0.1s linear;
+}
+
+.checked {
+    background-color: #84f684;
+}
+
+.ingredient:hover {
+    background-color: rgb(227, 253, 212);
 }
 
 .ingredient p {
@@ -88,8 +109,8 @@ button:hover {
 }
 
 .recipe img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 300px;
+    max-height: 300px;
     margin-top: 10px;
 }
 
@@ -145,6 +166,7 @@ input.submit {
 }
 @media screen and (max-width: 700px){
     .ingredient {
-        width: 100%;
+        width: 70%;
+        min-width: 250px;
     }
 }
