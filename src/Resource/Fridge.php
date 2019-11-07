@@ -40,8 +40,12 @@ class Fridge {
      */
     public function deleteRecipe(array $recipe): bool
     {
-        $statement = "DELETE FROM `recipes` (`title`, `link`, `imageURL`, `ingredients`) WHERE (?, ?, ?, ?)";
+        $statement = "DELETE FROM `recipes` (`title`, `link`, `imageURL`, `ingredients`) WHERE (:title, :link, :imageURL, :ingredients)";
         $query = $this->db->prepare($statement);
-        return $query->execute([$recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']]);
+        $query->bindParam(":title", $recipe['title']);
+        $query->bindParam(":link", $recipe['link']);
+        $query->bindParam(":imageURL", $recipe['imageURL']);
+        $query->bindParam(":ingredients", $recipe['ingredients']);
+        return $query->execute();
     }
 }
