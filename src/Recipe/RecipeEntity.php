@@ -68,14 +68,12 @@ class RecipeEntity {
      */
     public function generateHTML(): string
     {
-        $post = json_encode($_POST);
         $html = "<div class='recipe'>";
         $html .= "<div class='left'>";
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
         $html .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
-        $html .= "<input class='hidden' type='text' name='post' value='$post'>";
         $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
         $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
         $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
