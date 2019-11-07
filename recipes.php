@@ -6,7 +6,7 @@ use GRUB\Display\DisplayRecipes;
 
 $message = "";
 
-if($_POST != []) {
+if ($_POST != []) {
 
     $_SESSION['ingredients'] = $_POST;
     $recipeHTML = DisplayRecipes::generateRecipeHTML($_POST);
@@ -15,7 +15,7 @@ if($_POST != []) {
     * so that recipes from search are still
     * displayed even after saving a recipe
     */
-    if(isset($_SESSION['ingredients'])) {
+    if (isset($_SESSION['ingredients'])) {
         $recipeHTML = DisplayRecipes::generateRecipeHTML($_SESSION['ingredients']);
     } else {
         header("Location: index.php?message=Please%20select%20some%20ingredients");
