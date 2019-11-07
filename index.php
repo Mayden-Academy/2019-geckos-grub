@@ -25,6 +25,7 @@ if(isset($_GET['message'])) {
     <body>
         <div class="container">
             <h1>GRUB</h1>
+            <a href='savedRecipes.php'><button>View Saved Recipes</button></a>
             <div>
                 <h6>Please select the ingredients you would like to use</h6>
             </div>

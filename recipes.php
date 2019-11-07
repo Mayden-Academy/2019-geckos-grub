@@ -34,6 +34,7 @@ if($_POST != []) {
     <body>
         <div class="container">
             <h1>GRUB</h1>
+            <a href='savedRecipes.php'><button>View Saved Recipes</button></a>
             <a href='index.php'><button>Back</button></a>
             <br>
                 <?php echo $htmlOut; ?>    
