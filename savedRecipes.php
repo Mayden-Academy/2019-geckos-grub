@@ -12,7 +12,7 @@ foreach($recipes as $recipe) {
 $htmlOut .=  $recipe->generateHTMLSaved();
 }
 } else {
-$htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
+$htmlOut =  "<h1>You have no recipes saved</h1>";
 }
 
 ?>
