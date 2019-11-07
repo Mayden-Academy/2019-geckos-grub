@@ -1,13 +1,15 @@
 <?php
 
 namespace GRUB\Resource;
+
 use PDO;
 
 /**
  * Class Fridge
  * @package GRUB\Resource holds methods for saving and deleting recipes
  */
-class Fridge {
+class Fridge
+{
 
     /**
      * @var PDO database connection
@@ -41,7 +43,7 @@ class Fridge {
 
         // 'If' checking if there is an existing recipe with that URL
 
-        if(count($existingRecipes) > 0) {
+        if (count($existingRecipes) > 0) {
             $statement = "UPDATE `recipes` (`title`, `link`, `imageURL`, `ingredients`) VALUES (:title, :link, :imageURL, :ingredients) WHERE `link` = :link;";
             $query = $this->db->prepare($statement);
             $query->bindParam(":title", $recipe['title']);
@@ -59,6 +61,7 @@ class Fridge {
             return $query->execute();
         }
     }
+
     /**
      * @param array $recipe the recipe to be delete by the user
      *
