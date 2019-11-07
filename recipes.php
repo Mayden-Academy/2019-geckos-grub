@@ -25,7 +25,8 @@ if($_POST != []) {
     }
 } else {
     /* Grabs session ingredients if present
-    * so that
+    * so that recipes from search are still
+    * 
     */
     if(isset($_SESSION['ingredients'])) {
         $htmlOut = '';
