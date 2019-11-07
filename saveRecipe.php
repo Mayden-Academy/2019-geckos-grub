@@ -7,7 +7,7 @@ use GRUB\Resource\Db;
 
 
 /**
- * Catches
+ * Catches save
  * 
  */
 if($_POST !=[]){
