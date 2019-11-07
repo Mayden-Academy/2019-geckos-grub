@@ -33,13 +33,13 @@ class RecipeDBHydrator
      */
     public function getRecipesFromDB(): array
     {
-        $recipesOut = [];
-
         $statement = "SELECT `title`, `link`, `imageURL`, `ingredients` FROM `recipes`;";
         $query = $this->db->prepare($statement);
         $query->setFetchMode(PDO::FETCH_ASSOC);
         $query->execute();
         $savedRecipes =  $query->fetchAll();
+
+        $recipesOut = [];
 
         foreach($savedRecipes as $recipe) {
             $recipeObj = new RecipeEntity($recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']);
