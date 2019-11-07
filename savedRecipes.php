@@ -14,7 +14,10 @@ $htmlOut .=  $recipe->generateHTMLSaved();
 } else {
 $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
 }
-
+if($_POST !=[]){
+    $thefridge =new GRUB\Resource\Fridge(GRUB\Resource\Db::getDB());
+    $thefridge->deleteRecipe($_POST);
+}
 ?>
 
 <html lang="en-GB">
