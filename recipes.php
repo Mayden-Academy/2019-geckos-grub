@@ -17,7 +17,7 @@ if($_POST != []) {
     $recipes = $recipeHydrator->getRecipes();
     if(count($recipes) != 0) {
         foreach($recipes as $recipe) {
-            $htmlOut .=  $recipe->generateHTML();
+            $htmlOut .=  $recipe->generateHTML(false);
         }
     } else {
         $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
@@ -36,7 +36,7 @@ if($_POST != []) {
         $recipes = $recipeHydrator->getRecipes();
         if(count($recipes) != 0) {
             foreach($recipes as $recipe) {
-                $htmlOut .=  $recipe->generateHTML();
+                $htmlOut .=  $recipe->generateHTML(false);
             }
         } else {
             $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";

@@ -64,51 +64,31 @@ class RecipeEntity {
      *
      * @return string HTML code. 
      */
-    public function generateHTML(): string
+    public function generateHTML(bool $saved): string
     {
         $html = "<div class='recipe'>";
         $html .= "<div class='left'>";
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
-        $html .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
-        $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
-        $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
-        $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
-        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
-        $html .= "<button type='submit' name='saveButton'>Save Recipe</button>";
-        $html .= "</form>";
-        $html .= "<div class='recipeButton'>";
-        $html .= "<a href='$this->link'><button>Link to Recipe</button></a>";
-        $html .= "</div>";
-        $html .= "</div>";
-        $html .= "<div class='right'>";
-        $html .= "<h5>$this->title</h5>";
-        $html .= "<p>Ingredients: $this->ingredients </p>";
-        $html .= "</div>";
-        $html .= "</div>";
-        return $html;
-    }
+        if($saved==false) {
+            $html .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
+            $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
+            $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
+            $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
+            $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+            $html .= "<button type='submit' name='saveButton'>Save Recipe</button>";
+            $html .= "</form>";
+        } elseif($saved==true) {
+            $html .= "<form class='recipeForm' method='post'>";
+            $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
+            $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
+            $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
+            $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+            $html .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
+            $html .= "</form>";
+        }
 
-    /**
-     * Generating HTML from recipe properties with delete button for saved recipes.
-     *
-     * @return string HTML code.
-     */
-    public function generateHTMLSaved(): string
-    {
-        $html = "<div class='recipe'>";
-        $html .= "<div class='left'>";
-        $html .= "<div class='recipeImage'>";
-        $html .= "<img src='$this->imageURL'/>";
-        $html .= "</div>";
-        $html .= "<form class='recipeForm' method='post'>";
-        $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
-        $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
-        $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
-        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
-        $html .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
-        $html .= "</form>";
         $html .= "<div class='recipeButton'>";
         $html .= "<a href='$this->link'><button>Link to Recipe</button></a>";
         $html .= "</div>";

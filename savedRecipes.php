@@ -11,7 +11,7 @@ $recipeDBHydrator = new RecipeDBHydrator(GRUB\Resource\Db::getDB());
 $recipes = $recipeDBHydrator->getRecipesFromDB();
 if (count($recipes) != 0) {
     foreach ($recipes as $recipe) {
-        $htmlOut .= $recipe->generateHTMLSaved();
+        $htmlOut .= $recipe->generateHTML(true);
     }
 } else {
     $htmlOut = "<h3>You have no recipes saved</h3>";

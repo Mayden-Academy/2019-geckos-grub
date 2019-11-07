@@ -14,7 +14,7 @@ class StackTest extends TestCase {
 	public function testSuccessRecipeEntityGenerateHTML()
     {
         $testIngredient = new GRUB\Recipe\RecipeEntity ('string','string','string','string');
-        $result = $testIngredient->generateHTML();
+        $result = $testIngredient->generateHTML(false);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
@@ -47,7 +47,7 @@ class StackTest extends TestCase {
     public function testFailureRecipeEntityGenerateHTML()
     {
         $testIngredient = new GRUB\Recipe\RecipeEntity (9,9,9,9);
-        $result = $testIngredient->generateHTML();
+        $result = $testIngredient->generateHTML(false);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
@@ -88,9 +88,9 @@ class StackTest extends TestCase {
      *
      * @return void
      */
-    public function testSuccessRecipeEntityGenerateHTMLSaved(){
+    public function testSuccessRecipeEntityGenerateHTMLsaved(){
         $testIngredient = new GRUB\Recipe\RecipeEntity ('string','string','string','string');
-        $result = $testIngredient->GenerateHTMLSaved();
+        $result = $testIngredient->GenerateHTML(true);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
@@ -119,9 +119,9 @@ class StackTest extends TestCase {
      *
      * @return void
      */
-    public function testFailureRecipeEntityGenerateHTMLSaved(){
+    public function testFailureRecipeEntityGenerateHTMLsaved(){
         $testIngredient = new GRUB\Recipe\RecipeEntity (9,9,9,9);
-        $result = $testIngredient->GenerateHTMLSaved();
+        $result = $testIngredient->GenerateHTML(true);
         $expected = "<div class='recipe'>";
         $expected .= "<div class='left'>";
         $expected .= "<div class='recipeImage'>";
@@ -150,7 +150,7 @@ class StackTest extends TestCase {
      *
      * @return void
      */
-    public function testMalformedRecipeEntityGenerateHTMLSaved(){
+    public function testMalformedRecipeEntityGenerateHTMLsaved(){
         $this->expectException(TypeError::class);
         $case = new GRUB\Recipe\RecipeEntity ([],[],[],[]);
     }
