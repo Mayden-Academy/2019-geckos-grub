@@ -47,7 +47,7 @@ class RecipeEntity {
      *
      * @param string $ingredients Array of the ingredients required for the recipe
      */
-    public function __construct(string $title, string $link, string $imageURL, string $ingredients)
+    public function __construct(string $title = "", string $link = "", string $imageURL = "", string $ingredients = "")
     {
       $this->title = html_entity_decode($title);
       $this->link = $link;

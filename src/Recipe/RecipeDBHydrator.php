@@ -35,17 +35,9 @@ class RecipeDBHydrator
     {
         $statement = "SELECT `title`, `link`, `imageURL`, `ingredients` FROM `recipes`;";
         $query = $this->db->prepare($statement);
-        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $query->setFetchMode(PDO::FETCH_CLASS, "GRUB\Recipe\RecipeEntity");
         $query->execute();
-        $savedRecipes =  $query->fetchAll();
-
-        $recipesOut = [];
-
-        foreach($savedRecipes as $recipe) {
-            $recipeObj = new RecipeEntity($recipe['title'], $recipe['link'], $recipe['imageURL'], $recipe['ingredients']);
-            array_push($recipesOut, $recipeObj);
-        }
-
+        $recipesOut =  $query->fetchAll();
         return $recipesOut;
     }
 }
