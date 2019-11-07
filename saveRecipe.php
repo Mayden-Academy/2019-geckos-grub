@@ -7,7 +7,8 @@ use GRUB\Resource\Db;
 
 
 /**
- * Catches save button form request from recipes
+ * Catches save button form request from recipes.php
+ * Redirects to 
  * 
  */
 if($_POST !=[]){
