@@ -85,7 +85,7 @@ h1 {
 }
 
 .recipe h5 {
-    margin: 40px 7s0px 0 0;
+    margin: 40px 70px 0 0;
 }
 
 .recipe p {
@@ -166,12 +166,13 @@ input.submit {
         width: 50%;
     }
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
     .ingredient {
         width: 70%;
         min-width: 250px;
-  }
-  
-a {
-    text-decoration: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
 }
