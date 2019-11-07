@@ -104,8 +104,16 @@ class RecipeEntity {
         $html .= "<div class='recipeImage'>";
         $html .= "<img src='$this->imageURL'/>";
         $html .= "</div>";
-        $html .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
-        $html .= "<a href='$this->link'><button>Link to recipe</button></a>";
+        $html .= "<form class='recipeForm'>";
+        $html .= "<input class='hidden' type='text' name='title' value='$this->title'>";
+        $html .= "<input class='hidden' type='text' name='ingredients' value='$this->ingredients'>";
+        $html .= "<input class='hidden' type='text' name='imageURL' value='$this->imageURL'>";
+        $html .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $html .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
+        $html .= "</form>";
+        $html .= "<div class='recipeButton'>";
+        $html .= "<a href='$this->link'><button>Link to Recipe</button></a>";
+        $html .= "</div>";
         $html .= "</div>";
         $html .= "<div class='right'>";
         $html .= "<h5>$this->title</h5>";
