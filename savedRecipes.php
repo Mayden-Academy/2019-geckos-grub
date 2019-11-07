@@ -17,6 +17,7 @@ $htmlOut =  "<h1>You have no recipes saved</h1>";
 if($_POST !=[]){
     $thefridge =new GRUB\Resource\Fridge(GRUB\Resource\Db::getDB());
     $thefridge->deleteRecipe($_POST);
+    header("Location: savedRecipes.php");
 }
 ?>
 
