@@ -10,7 +10,7 @@ $message = "";
 if($_POST != []) {
     $_SESSION['ingredients'] = $_POST;
     $htmlOut = '';
-    $formDataHandler = new GRUB\Resource\FormDataHandler();
+    $formDataHandler = new GRUB\Ingredient\FormDataHandler();
     $ingredients = $formDataHandler->processData($_POST);
     $request = new Curl($ingredients);
     $recipeHydrator = new RecipeHydrator($request);
@@ -29,7 +29,7 @@ if($_POST != []) {
     */
     if(isset($_SESSION['ingredients'])) {
         $htmlOut = '';
-        $formDataHandler = new GRUB\Resource\FormDataHandler();
+        $formDataHandler = new GRUB\Ingredient\FormDataHandler();
         $ingredients = $formDataHandler->processData($_SESSION['ingredients']);
         $request = new Curl($ingredients);
         $recipeHydrator = new RecipeHydrator($request);
