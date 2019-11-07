@@ -2,7 +2,7 @@
 
 namespace GRUB\Display;
 use GRUB\Resource\Curl;
-use GRUB\Resource\FormDataHandler as FormDataHandler;
+use GRUB\Ingredient\FormDataHandler as FormDataHandler;
 use GRUB\Recipe\RecipeHydrator as RecipeHydrator;
 
 /**
