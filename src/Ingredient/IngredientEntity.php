@@ -1,6 +1,6 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Ingredient;
 
 /**
  * Class IngredientEntities uses ingredients object from IngredientsHydrator to output a list of ingredients with checkboxes to the front end
@@ -19,7 +19,8 @@ class IngredientEntity {
      *
      * @return string Name of ingredient
      */
-    public function getName(): string{
+    public function getName(): string
+    {
         return $this->name;
     }
 
@@ -28,7 +29,8 @@ class IngredientEntity {
      *
      * @return string HTML string
      */
-    public function generateHTML(): string{
+    public function generateHTML(): string
+    {
         $html = "<div class='ingredient'>";
         $html .= "<label><input type='checkbox' name='".$this->getName()."'/>";
         $html .= "".$this->getName()."</label>";

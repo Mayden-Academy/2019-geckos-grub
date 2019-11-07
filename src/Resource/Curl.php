@@ -1,11 +1,12 @@
 <?php
 
-namespace GRUB;
+namespace GRUB\Resource;
 
 /**
-* Used for creating an API connection
-**/
-class Curl {
+ * Used for creating an API connection
+ **/
+class Curl
+{
 
     /**
      * Base url for the RecipePuppy API

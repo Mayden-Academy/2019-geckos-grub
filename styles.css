@@ -14,6 +14,10 @@ body {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
 .ingredient {
     overflow: auto;
     margin: 10px;
@@ -62,6 +66,11 @@ button {
     font-style: italic;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.recipeForm {
+    margin: 0;
 }
 
 .recipe img {
@@ -75,11 +84,15 @@ button {
     padding: 5px;
 }
 
+.recipe div .recipeButton {
+    min-height: initial;
+}
+
 .recipe .left {
     float: left;
     width: 40%;
 }
- 
+
 .recipe .right {
     float: right;
     width: 60%;
@@ -109,4 +122,8 @@ input.submit {
     height: 40px;
     border-radius: 5px;
     margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
 }
