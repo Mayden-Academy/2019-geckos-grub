@@ -24,7 +24,9 @@ if($_POST != []) {
         $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
     }
 } else {
-    // Grabs session ingredients 
+    /* Grabs session ingredients if present
+    * so that
+    */
     if(isset($_SESSION['ingredients'])) {
         $htmlOut = '';
         $formDataHandler = new GRUB\Resource\FormDataHandler();
