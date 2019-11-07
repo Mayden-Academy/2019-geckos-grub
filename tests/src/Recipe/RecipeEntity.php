@@ -21,11 +21,10 @@ class StackTest extends TestCase {
         $expected .= "<img src='string'/>";
         $expected .= "</div>";
         $expected .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
-        $expected .= "<input class='hidden' type='text' name='title' value='{}'>";
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
-        $expected .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $expected .= "<input class='hidden' type='text' name='link' value='string'>";
         $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
@@ -55,7 +54,6 @@ class StackTest extends TestCase {
         $expected .= "<img src='9'/>";
         $expected .= "</div>";
         $expected .= "<form class='recipeForm' method='post' action='saveRecipe.php'>";
-        $expected .= "<input class='hidden' type='text' name='title' value='{}'>";
         $expected .= "<input class='hidden' type='text' name='title' value='9'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";
@@ -63,9 +61,7 @@ class StackTest extends TestCase {
         $expected .= "<button type='submit' name='saveButton'>Save Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
-        $expected .= "<a href='9'>";
-        $expected .= "<button>Link to Recipe</button>";
-        $expected .= "</a>";
+        $expected .= "<a href='9'><button>Link to Recipe</button></a>";
         $expected .= "</div>";
         $expected .= "</div>";
         $expected .= "<div class='right'>";
@@ -104,7 +100,7 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='title' value='string'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='string'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='string'>";
-        $expected .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $expected .= "<input class='hidden' type='text' name='link' value='string'>";
         $expected .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
@@ -135,7 +131,7 @@ class StackTest extends TestCase {
         $expected .= "<input class='hidden' type='text' name='title' value='9'>";
         $expected .= "<input class='hidden' type='text' name='ingredients' value='9'>";
         $expected .= "<input class='hidden' type='text' name='imageURL' value='9'>";
-        $expected .= "<input class='hidden' type='text' name='link' value='$this->link'>";
+        $expected .= "<input class='hidden' type='text' name='link' value='9'>";
         $expected .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
         $expected .= "</form>";
         $expected .= "<div class='recipeButton'>";
