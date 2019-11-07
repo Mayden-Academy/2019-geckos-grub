@@ -21,7 +21,9 @@ if(isset($_GET['message'])) {
     <head>
         <title>GRUB</title>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
-        
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
         <div class="container">
