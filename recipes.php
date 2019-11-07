@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "vendor/autoload.php";
 
 use GRUB\Resource\Curl;
@@ -9,6 +9,7 @@ use GRUB\Validator\Validator;
 $message = "";
 
 if($_POST != []) {
+    $_SESSION['ingredients'] = $_POST;
     $htmlOut = '';
     $formDataHandler = new GRUB\Resource\FormDataHandler();
     $ingredients = $formDataHandler->processData($_POST);
@@ -23,11 +24,10 @@ if($_POST != []) {
         $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
     }
 } else {
-    if(isset($_COOKIE['ingredients'])) {
-        $post = json_decode(json_decode($_COOKIE['ingredients'], true),true);
+    if(isset($_SESSION['ingredients'])) {
         $htmlOut = '';
         $formDataHandler = new GRUB\Resource\FormDataHandler();
-        $ingredients = $formDataHandler->processData($post);
+        $ingredients = $formDataHandler->processData($_SESSION['ingredients']);
         $request = new Curl($ingredients);
         $recipeHydrator = new RecipeHydrator($request);
         $recipes = $recipeHydrator->getRecipes();
@@ -35,13 +35,11 @@ if($_POST != []) {
             foreach($recipes as $recipe) {
                 $htmlOut .=  $recipe->generateHTML();
             }
-
-        $post = "";
         } else {
             $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
         }
     } else {
-        // header("Location: index.php?message=Please%20select%20some%20ingredients");
+        header("Location: index.php?message=Please%20select%20some%20ingredients");
     }
 }
 
