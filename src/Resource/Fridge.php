@@ -44,6 +44,5 @@ class Fridge {
         $query = $this->db->prepare($statement);
         $query->bindParam(":link", $recipe['link']);
         return $query->execute();
-
     }
 }
