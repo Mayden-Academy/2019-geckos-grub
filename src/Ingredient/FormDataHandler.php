@@ -1,7 +1,10 @@
 <?php
-namespace GRUB\Resource;
+
+namespace GRUB\Ingredient;
+
 use GRUB\Validator\Validator;
 use GRUB\Validator\UserIngredientValidator;
+
 /**
  * @class FormDataHandler that provides method to process form data into an array
  */
@@ -16,7 +19,7 @@ class FormDataHandler
      * @param $formData post from the form
      * @return array of ingredients from the user, validated
      */
-    public function processData(array $formData) :array
+    public function processData(array $formData): array
     {
        foreach($formData as $key=>$value){
            if($key == 'userIngredients'){

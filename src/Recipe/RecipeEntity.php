@@ -49,16 +49,14 @@ class RecipeEntity {
      */
     public function __construct(string $title, string $link, string $imageURL, string $ingredients)
     {
-              $this->title = html_entity_decode($title);
-              $this->link = $link;
-
-            if(strlen($imageURL) == 0) {
-                $this->imageURL = "img/can.jpg";
-            } else {
-                $this->imageURL = $imageURL;
-            }
-
-            $this->ingredients = $this->limit_ingredients($ingredients);
+      $this->title = html_entity_decode($title);
+      $this->link = $link;
+        if(strlen($imageURL) == 0) {
+            $this->imageURL = "img/can.jpg";
+        } else {
+            $this->imageURL = $imageURL;
+        }
+        $this->ingredients = $this->limit_ingredients($ingredients);
     }
 
     /**
@@ -129,7 +127,7 @@ class RecipeEntity {
      * @param [string] $phrase The string of ingredients to be trimmed
      * @return string Number of ingredients limited to 21
      */
-    private function limit_ingredients(string $phrase) :string
+    private function limit_ingredients(string $phrase): string
     {
         $phrase_array = explode(', ',$phrase);
         if(count($phrase_array) > 21) {

@@ -9,8 +9,8 @@ $message = "";
 if($_POST != []) {
 
     $_SESSION['ingredients'] = $_POST;
-    $recipeHTML = DisplayRecipes::generateRecipeHTML($_POST);
 
+    $recipeHTML = DisplayRecipes::generateRecipeHTML($_POST);
 } else {
 
     /* Grabs session ingredients if present
@@ -18,7 +18,19 @@ if($_POST != []) {
     * displayed even after saving a recipe
     */
     if(isset($_SESSION['ingredients'])) {
-        $recipeHTML = DisplayRecipes::generateRecipeHTML($_SESSION['ingredients']);
+        $htmlOut = '';
+        $formDataHandler = new GRUB\Ingredient\FormDataHandler();
+        $ingredients = $formDataHandler->processData($_SESSION['ingredients']);
+        $request = new Curl($ingredients);
+        $recipeHydrator = new RecipeHydrator($request);
+        $recipes = $recipeHydrator->getRecipes();
+        if(count($recipes) != 0) {
+            foreach($recipes as $recipe) {
+                $htmlOut .=  $recipe->generateHTML();
+            }
+        } else {
+            $htmlOut =  "<h1>No recipes found, please select different ingredients</h1>";
+        }
     } else {
         header("Location: index.php?message=Please%20select%20some%20ingredients");
     }

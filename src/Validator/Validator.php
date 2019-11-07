@@ -10,11 +10,11 @@ abstract class Validator {
     /**
  * Function to validate post data from form submitted from index.php
  *
- * @param array $ingredient 
+ * @param string $ingredient
  * 
  * @return string validated ingredient
  */
-    public static function validateIngredient(string $ingredient) :string
+    public static function validateIngredient(string $ingredient): string
     {
         $ingredient = htmlentities($ingredient);
         return $ingredient;
