@@ -3,6 +3,10 @@
 namespace GRUB\Resource;
 use PDO;
 
+/**
+ * Class Fridge
+ * @package GRUB\Resource holds methods for saving and deleting recipes
+ */
 class Fridge {
 
     /**
