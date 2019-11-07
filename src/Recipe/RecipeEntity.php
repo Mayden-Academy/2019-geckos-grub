@@ -6,29 +6,30 @@ namespace GRUB\Recipe;
 /**
  * Class for a recipe object
  */
-class RecipeEntity {
-    
+class RecipeEntity
+{
+
     /**
      * Recipe title
      *
      * @var string Recipe title
      */
     private $title = "";
-    
+
     /**
      * Recipe URL
      *
      * @var string Recipe URL
      */
     private $link = "";
-    
+
     /**
      * Recipe Image
      *
      * @var string Recipe Image
      */
     private $imageURL = "";
-    
+
     /**
      * Recipe ingredients
      *
@@ -41,7 +42,7 @@ class RecipeEntity {
      *
      * @param string $title Title of the recipe
      *
-     * @param string $link Link to the recipe 
+     * @param string $link Link to the recipe
      *
      * @param string $imageURL URL of an image of the dish
      *
@@ -49,9 +50,9 @@ class RecipeEntity {
      */
     public function __construct(string $title, string $link, string $imageURL, string $ingredients)
     {
-      $this->title = html_entity_decode($title);
-      $this->link = $link;
-        if(strlen($imageURL) == 0) {
+        $this->title = html_entity_decode($title);
+        $this->link = $link;
+        if (strlen($imageURL) == 0) {
             $this->imageURL = "img/can.jpg";
         } else {
             $this->imageURL = $imageURL;
@@ -62,7 +63,7 @@ class RecipeEntity {
     /**
      * Generating HTML from recipe properties.
      *
-     * @return string HTML code. 
+     * @return string HTML code.
      */
     public function generateHTML(): string
     {
@@ -129,10 +130,10 @@ class RecipeEntity {
      */
     private function limit_ingredients(string $phrase): string
     {
-        $phrase_array = explode(', ',$phrase);
-        if(count($phrase_array) > 21) {
+        $phrase_array = explode(', ', $phrase);
+        if (count($phrase_array) > 21) {
             $phrase = implode(', ', array_slice($phrase_array, 0, 21)) . '...';
         }
         return $phrase;
-     }
+    }
 }
