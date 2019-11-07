@@ -4,7 +4,6 @@ require_once "vendor/autoload.php";
 
 use GRUB\Resource\Curl;
 use GRUB\Recipe\RecipeHydrator;
-use GRUB\Validator\Validator;
 
 $message = "";
 
