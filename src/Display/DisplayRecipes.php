@@ -16,7 +16,7 @@ abstract class DisplayRecipes
      * @param array $dataSource Formdata from ingredients selection page
      * @return string HTML for recipes 
      */
-    public static function generateRecipeHTML(array $dataSource) : string
+    public static function generateRecipeHTML(array $dataSource): string
     {
     $htmlOut = '';
     $formDataHandler = new FormDataHandler();
