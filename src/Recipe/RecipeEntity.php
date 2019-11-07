@@ -112,7 +112,6 @@ class RecipeEntity {
         $html .= "<button type='submit' name='deleteButton'>Delete Recipe</button>";
         $html .= "</form>";
         $html .= "<div class='recipeButton'>";
-        $html .= "<a name='deleteRecipe'><button>Delete Recipe</button></a>";
         $html .= "<a href='$this->link'><button>Link to Recipe</button></a>";
         $html .= "</div>";
         $html .= "</div>";
