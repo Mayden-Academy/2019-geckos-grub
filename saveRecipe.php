@@ -5,6 +5,11 @@ require_once "vendor/autoload.php";
 use GRUB\Resource\Fridge;
 use GRUB\Resource\Db;
 
+
+/**
+ * Catches
+ * 
+ */
 if($_POST !=[]){
     $message = $_POST['title'];
     $thefridge = new Fridge(Db::getDB());
