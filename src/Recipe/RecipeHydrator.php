@@ -29,7 +29,7 @@ class RecipeHydrator
     /**
      * @return array pass a array of objects(recipes) with all the information from the Curl
      */
-    public function getRecipes():array
+    public function getRecipes(): array
     {
         foreach($this->recipesArray as $recipe){
             $recipe = new RecipeEntity($recipe['title'], $recipe['href'], $recipe['thumbnail'], $recipe['ingredients']);
